@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  ── Design tokens ──────────────────────────────────────────────
+  The structure mirrors the SODA Inc. (sodainc.ca) design system:
+  a near-black surface scale, off-white foreground, square corners
+  (--radius: 0), and a single brand accent.
+
+  Accent = sodainc.ca lime/chartreuse green (#A6CC33), matching the
+  reference site exactly. Surfaces stay near-black + grey like SODA.
+  ───────────────────────────────────────────────────────────────
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 4%; /* #0A0A0A */
+    --foreground: 0 0% 98%; /* #FAFAFA */
+
+    --card: 0 0% 6%; /* #0F0F0F */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%; /* white buttons */
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%; /* #1F1F1F */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%; /* #262626 */
+    --muted-foreground: 0 0% 65%; /* #A6A6A6 */
+
+    /* Accent — sodainc.ca lime/chartreuse (#A6CC33) */
+    --accent: 75 60% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%; /* #2E2E2E */
+    --input: 0 0% 18%;
+    --ring: 0 0% 98%;
+
+    --gold: 45 80% 55%; /* #E8BA30 — secondary, optional */
+    --charcoal: 0 0% 8%; /* #141414 */
+
+    --radius: 0px; /* sharp / square corners, like SODA */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  /* Custom scrollbar to match the dark surface */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(0 0% 6%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(0 0% 22%);
+    border: 2px solid hsl(0 0% 6%);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--accent));
+  }
+}
+
+@layer components {
+  /* Section shell — the generous vertical rhythm SODA uses */
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .container-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Uppercase tracked eyebrow label (accent-colored) */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-eyebrow text-accent;
+  }
+
+  /* Display headings */
+  .heading-xl {
+    @apply font-display font-medium leading-[1.02] tracking-tightest;
+  }
+
+  /* Thin divider rule */
+  .rule {
+    @apply h-px w-full bg-border;
+  }
+
+  /* Hover-underline link used in nav + lists */
+  .link-underline {
+    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Fade edges for marquee strips */
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 8%,
+      black 92%,
+      transparent
+    );
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
