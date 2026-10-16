@@ -1,101 +1,149 @@
 /**
- * Global site configuration — brand, contact, offices, socials, stats.
- * Single source of truth so brand details can be swapped in one place.
+ * Code-level brand defaults. Anything here can be overridden from
+ * Dashboard → Settings (stored in `site_settings`); these values are the
+ * fallback when Supabase is not configured or a field is left blank.
  */
 
 export const site = {
-  name: "Ribbon IT",
-  legalName: "Ribbon IT Pvt. Ltd.",
-  tagline: "let's grow together",
-  foundedYear: 2013,
-  anniversaryYears: 13,
-  url: "https://www.ribbonit.com",
+  name: "Snowdox",
+  legalName: "Snowdox Studio",
+  tagline: "We code brands that move.",
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, ""),
   description:
-    "Ribbon IT is an elite web development & digital experience company crafting result-oriented websites, apps, AI agents and marketing that drive infinite results.",
-  email: "info@ribbonit.com",
-  supportEmail: "support@ribbonit.com",
-  careersEmail: "recruiter@ribbonit.com",
-  phonePrimary: "+91 93533 70081",
-  phoneSecondary: "+91 80887 49165",
-  hours: "Mon – Sun · 08:30 – 20:30 IST",
+    "Snowdox is a design & engineering agency building fast websites, digital products and AI-powered tools for brands that refuse to blend in.",
+  titleTemplate: "%s | Snowdox",
+  email: "hello@snowdox.com",
+  phone: "",
+  address: "Remote-first · Working worldwide",
+  keywords: [
+    "web development agency",
+    "Next.js development",
+    "UI UX design agency",
+    "AI automation agency",
+    "SEO agency",
+    "Snowdox",
+  ],
+  socials: {
+    linkedin: "https://www.linkedin.com/company/snowdox",
+    github: "https://github.com/snowdox",
+    x: "https://x.com/snowdox",
+    instagram: "https://www.instagram.com/snowdox",
+    dribbble: "",
+  },
 };
 
-export const announcement = {
-  badge: "WEBOVERSE 13",
-  text: "Celebrating 13 Years of Purpose, People & Progress",
-  ctaLabel: "Watch Now",
-  ctaHref: "/about",
-};
-
-export const offices = [
-  {
-    id: "bangalore",
-    label: "Bangalore",
-    flag: "🇮🇳",
-    role: "Global Headquarters",
-    address:
-      "24, 2nd Floor, 5th Cross Rd, KHB Colony, 5th Block, Koramangala, Bengaluru, Karnataka 560095",
-    phone: "+91 93533 70081",
-    email: "info@ribbonit.com",
-    maps: "https://g.page/ribbonit",
-  },
-  {
-    id: "dubai",
-    label: "Dubai",
-    flag: "🇦🇪",
-    role: "Middle East Office",
-    address: "Prime Tower, 33rd Floor, Office #10, Business Bay, Dubai, UAE",
-    phone: "+971 55 768 6795",
-    email: "info@ribbonit.com",
-    maps: "https://maps.app.goo.gl/rYbtkafoopz7FJxQ8",
-  },
-  {
-    id: "toronto",
-    label: "Toronto",
-    flag: "🇨🇦",
-    role: "North America Office",
-    address: "1 King Street W, Suite 4800 - 203, Toronto, ON, M5H 1A1",
-    phone: "+1 437-886-1554",
-    email: "info@ribbonit.ca",
-    maps: "https://maps.app.goo.gl/ncmfm1hkrxcSjsT26",
-  },
-];
-
-export const socials = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/ribbonit-private-limited/", icon: "Linkedin" },
-  { label: "Instagram", href: "https://www.instagram.com/ribbonit.official/", icon: "Instagram" },
-  { label: "Facebook", href: "https://www.facebook.com/ribbonit/", icon: "Facebook" },
-  { label: "Twitter", href: "https://twitter.com/ribbonit", icon: "Twitter" },
-];
-
+/** Placeholder numbers — replace with your real figures before launch. */
 export const stats = [
-  { value: 13, suffix: "+", label: "Years of Experience", detail: "Building since 2013" },
-  { value: 2000, suffix: "+", label: "Websites Delivered", detail: "Across every industry" },
-  { value: 500, suffix: "+", label: "Clients Worldwide", detail: "Startups to enterprises" },
-  { value: 25, suffix: "+", label: "Countries Served", detail: "Global delivery footprint" },
+  { value: 120, suffix: "+", label: "Products shipped" },
+  { value: 98, suffix: "%", label: "Avg. Lighthouse score" },
+  { value: 14, suffix: "", label: "Countries served" },
+  { value: 0.8, suffix: "s", label: "Median LCP we ship", decimals: 1 },
 ];
 
-export const ratings = [
-  { platform: "Clutch", score: "4.9" },
-  { platform: "GoodFirms", score: "4.9" },
-  { platform: "Google", score: "4.8" },
-  { platform: "Trustpilot", score: "4.9" },
-  { platform: "Top Developers", score: "4.9" },
+export const stack = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Node.js",
+  "Supabase",
+  "PostgreSQL",
+  "Tailwind CSS",
+  "Figma",
+  "React Native",
+  "Flutter",
+  "Python",
+  "OpenAI",
+  "Anthropic",
+  "AWS",
+  "Vercel",
+  "Shopify",
+  "Stripe",
+  "Docker",
+  "GraphQL",
+  "Framer",
 ];
 
-export const recognitions = [
-  "Rated 4.9 on Clutch & GoodFirms",
-  "Google Partner Agency",
-  "Top Web Development Company — Bangalore",
-  "180+ Verified Client Reviews",
+/** "How we work" — rendered as a git log. */
+export const processSteps = [
+  {
+    hash: "a1f3c9e",
+    command: "git commit -m \"discover\"",
+    title: "Discover",
+    body: "Workshops, audits and user interviews. We map the business goal to measurable outcomes before a single pixel moves.",
+    duration: "Week 1",
+  },
+  {
+    hash: "7be21d4",
+    command: "git commit -m \"design\"",
+    title: "Design",
+    body: "Wireframes to high-fidelity systems in Figma. Clickable prototypes you can put in front of real users.",
+    duration: "Weeks 2–3",
+  },
+  {
+    hash: "c09e5aa",
+    command: "git commit -m \"build\"",
+    title: "Build",
+    body: "Typed, tested, accessible code in weekly sprints. You get a live preview URL from day one — no black boxes.",
+    duration: "Weeks 3–8",
+  },
+  {
+    hash: "e44b7f0",
+    command: "git push origin production",
+    title: "Launch",
+    body: "Performance budgets, SEO, analytics and monitoring wired in. Zero-downtime deploys, and we stay on call.",
+    duration: "Launch day",
+  },
+  {
+    hash: "f9d02c1",
+    command: "git checkout -b growth",
+    title: "Grow",
+    body: "Experiments, content and iteration. We read the data with you and keep shipping what moves the numbers.",
+    duration: "Ongoing",
+  },
 ];
 
-/** Company facts for the "Company Information" block on the homepage. */
-export const companyFacts = [
-  { label: "Firm Name", value: "Ribbon IT Pvt. Ltd." },
-  { label: "Established", value: "2013 · 13 Years Strong" },
-  { label: "Headquarters", value: "Koramangala, Bengaluru, India" },
-  { label: "Global Offices", value: "Bangalore · Dubai · Toronto" },
-  { label: "Specialties", value: "Web · Apps · AI Agents · Marketing" },
-  { label: "Engagement", value: "Project · Dedicated Team · Retainer" },
+export const principles = [
+  {
+    title: "Ship, then polish",
+    body: "Working software beats perfect decks. Every week you see something real.",
+    icon: "Rocket",
+  },
+  {
+    title: "Fast is a feature",
+    body: "Sub-second loads, 95+ Lighthouse and Core Web Vitals in the green — by default.",
+    icon: "Gauge",
+  },
+  {
+    title: "Loud by design",
+    body: "Safe is forgettable. We craft brands and interfaces people actually remember.",
+    icon: "Megaphone",
+  },
+  {
+    title: "No black boxes",
+    body: "Shared Slack, open repos, live previews. You own every line we write.",
+    icon: "Eye",
+  },
+];
+
+export const faqs = [
+  {
+    q: "How much does a project with Snowdox cost?",
+    a: "Every project is scoped individually — marketing sites are usually fixed-price, product builds are planned per sprint. After a free 30-minute call we send a clear proposal within 48 hours, with no surprise invoices.",
+  },
+  {
+    q: "How long does it take to launch?",
+    a: "A marketing site typically takes 4–6 weeks. MVPs and web apps usually take 8–12 weeks. You get a live preview link from the first week so you always know where things stand.",
+  },
+  {
+    q: "Can you work with our existing team or codebase?",
+    a: "Yes. We regularly plug into in-house teams, inherit legacy codebases and pair with your engineers. We start with a short code audit so we know exactly what we're working with.",
+  },
+  {
+    q: "Will I be able to update the site myself?",
+    a: "Always. We hand over a clean admin dashboard for blogs, pages and SEO — the same one this site runs on — plus documentation and a training session.",
+  },
+  {
+    q: "Do you offer support after launch?",
+    a: "We offer monthly care plans covering monitoring, security updates, performance tuning and a pool of hours for new features and experiments.",
+  },
 ];

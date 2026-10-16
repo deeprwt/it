@@ -1,47 +1,51 @@
 import Link from "next/link";
-import { ArrowLeft, Home } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/shared/Container";
+import { Logo } from "@/components/brand/Logo";
+import { CodeSnow } from "@/components/site/effects/CodeSnow";
 
 export const metadata = {
-  title: "Page Not Found",
+  title: "404 — Page not found",
+  robots: { index: false },
 };
 
 export default function NotFound() {
   return (
-    <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-charcoal">
-      <div
-        aria-hidden
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 50% 30%, hsl(var(--accent) / 0.14), transparent 60%)",
-        }}
-      />
-      <Container className="relative text-center">
-        <p className="eyebrow justify-center">Error 404</p>
-        <h1 className="mt-5 font-display text-7xl font-semibold text-foreground sm:text-8xl">
-          4<span className="text-accent">∞</span>4
-        </h1>
-        <p className="mx-auto mt-5 max-w-md text-base text-muted-foreground">
-          The page you&apos;re looking for has moved or never existed. Let&apos;s
-          get you back on track.
+    <main className="relative isolate flex min-h-screen flex-col overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-grid-lines mask-radial [background-size:56px_56px] opacity-60" />
+      <CodeSnow className="-z-10" density={0.6} />
+
+      <header className="container flex h-20 items-center">
+        <Link href="/" aria-label="Snowdox — home">
+          <Logo />
+        </Link>
+      </header>
+
+      <div className="container flex flex-1 flex-col items-center justify-center pb-20 text-center">
+        <p
+          data-text="404"
+          className="glitch font-display text-[34vw] font-extrabold leading-none tracking-tightest text-gradient sm:text-[16rem]"
+        >
+          404
         </p>
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button asChild variant="accent" size="lg">
+        <div className="mt-6 w-full max-w-md rounded-xl border border-white/10 bg-card/80 p-5 text-left font-mono text-sm backdrop-blur">
+          <p>
+            <span className="text-success">➜</span> <span className="text-brand">~</span> cd ./this-page
+          </p>
+          <p className="mt-1 text-destructive">zsh: no such file or directory</p>
+          <p className="mt-1 text-muted-foreground">hint: the page moved, or never existed.</p>
+        </div>
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <Button asChild variant="brand" size="lg" className="rounded-full">
             <Link href="/">
-              <Home className="h-4 w-4" />
-              Back to home
+              <ArrowLeft /> Back home
             </Link>
           </Button>
-          <Button asChild variant="outline" size="lg">
-            <Link href="/services">
-              <ArrowLeft className="h-4 w-4" />
-              Explore services
-            </Link>
+          <Button asChild variant="outline" size="lg" className="rounded-full border-white/15">
+            <Link href="/contact">Contact us</Link>
           </Button>
         </div>
-      </Container>
-    </section>
+      </div>
+    </main>
   );
 }
