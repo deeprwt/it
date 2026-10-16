@@ -56,7 +56,7 @@ export function AppHeader({ profile }) {
       </Tooltip>
 
       <Link href="/admin" className="rounded-lg lg:hidden" aria-label="Dashboard home">
-        <Logo markClassName="h-7 w-7" className="[&>span:last-child]:text-lg" />
+        <Logo className="h-10" />
       </Link>
 
       <Button

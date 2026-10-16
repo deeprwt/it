@@ -52,7 +52,7 @@ export function SocialPreview({ title, description, image, url, eyebrow, classNa
               <div aria-hidden className="absolute inset-0 bg-grid-lines opacity-60 [background-size:28px_28px]" />
               <div aria-hidden className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand/20 blur-3xl" />
               <div aria-hidden className="absolute -bottom-12 left-6 h-40 w-40 rounded-full bg-brand-2/20 blur-3xl" />
-              <LogoMark className="relative h-7 w-7" />
+              <LogoMark className="relative h-8" />
               <p className="relative line-clamp-3 font-display text-lg font-bold leading-tight text-foreground">
                 {title || "Untitled"}
               </p>

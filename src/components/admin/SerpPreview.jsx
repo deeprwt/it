@@ -57,7 +57,7 @@ export function SerpPreview({ title, description, url, siteName = "Snowdox", cla
         <div className={cn("transition-all duration-300", mobile ? "mx-auto max-w-[360px]" : "max-w-[600px]")}>
           <div className="flex items-center gap-3">
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border bg-muted">
-              <LogoMark className="h-4 w-4" />
+              <LogoMark className="h-4" />
             </span>
             <div className="min-w-0 leading-tight">
               <p className="truncate text-sm text-foreground">{siteName}</p>

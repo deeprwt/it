@@ -281,12 +281,12 @@ export function PerformanceSection({ service }) {
 
 export function DesignSystemSection() {
   const palette = [
-    ["Frost", "#0AE4FF"],
-    ["Ultraviolet", "#8B5CF6"],
-    ["Night", "#06070A"],
+    ["Navy", "#061B49"],
+    ["Royal", "#0058F4"],
+    ["Azure", "#027AFF"],
+    ["Sky", "#04B6FF"],
     ["Snow", "#F4F7FA"],
-    ["Coral", "#FF5C8A"],
-    ["Sun", "#FFC542"],
+    ["Night", "#050914"],
   ];
   return (
     <Band>

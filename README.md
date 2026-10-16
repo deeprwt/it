@@ -111,7 +111,27 @@ src/
     └── admin-data.js     dashboard reads
 ```
 
-## 4. Service pages — one design per service
+## 4. Brand & logo
+
+The official logo was extracted from `Snowdox logo.pdf` as true vector SVG
+(real gradients, tagline as glyph outlines) into [`public/brand/`](public/brand):
+
+| File | Use |
+| --- | --- |
+| `snowdox-logo-{dark,light}.svg` | Mark + wordmark, for dark / light backgrounds |
+| `snowdox-logo-full-{dark,light}.svg` | Full lockup with "DIGITAL MARKETING" |
+| `snowdox-mark-{dark,light}.svg` | The "S" mark alone |
+| `*.png`, `snowdox-logo-512.png` | Raster versions for email, decks, social, Google |
+
+Use `<Logo />` / `<LogoMark />` from `components/brand/Logo.jsx` and size them
+with a height class (`className="h-12"`). With the default `variant="auto"` they
+pick the right artwork for dark sections, white sections and the dashboard's light mode.
+Favicon: `src/app/icon.svg` · Apple touch icon: `src/app/apple-icon.png`.
+
+Colours in `globals.css` follow the logo (navy `#061B49`, royal `#0058F4`, azure
+`#027AFF`, sky `#04B6FF`); headings use **Montserrat**, the brand typeface.
+
+## 5. Service pages — one design per service
 
 Each service has its **own page layout**, not a shared template
 (`src/components/site/services/pages.jsx`), with copy in `src/data/services.js`:
@@ -131,7 +151,7 @@ tokens locally, so any token-based component renders correctly on white.
 Technology logos come from `simple-icons` and are server-rendered
 (`src/components/site/tech/registry.js`).
 
-## 5. Motion & effects (`src/components/site/effects`)
+## 6. Motion & effects (`src/components/site/effects`)
 
 - **CodeSnow** — code glyphs falling like snow, depth-layered, pushed away by the cursor
 - **ScrambleText** — text "decodes" from random glyphs (hero, eyebrows, nav hover)
@@ -143,7 +163,7 @@ Technology logos come from `simple-icons` and are server-rendered
 
 All effects pause off-screen and respect `prefers-reduced-motion`.
 
-## 6. Before launch — content to replace
+## 7. Before launch — content to replace
 
 `src/data/work.js` (case studies), `src/data/site.js` (`stats`, socials, email),
 and `src/data/careers.js` contain **placeholder content**. Replace them with real

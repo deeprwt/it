@@ -313,7 +313,7 @@ export function DesignCanvasVisual() {
           <div className="relative col-span-12 h-[300px] bg-[radial-gradient(hsl(var(--foreground)/0.08)_1px,transparent_1px)] [background-size:16px_16px] sm:col-span-6">
             <div className="absolute left-1/2 top-1/2 w-[200px] -translate-x-1/2 -translate-y-1/2">
               <div className="rounded-xl bg-white p-3 text-[#0b0b0f] shadow-elegant">
-                <div className="aspect-[16/9] rounded-lg bg-[linear-gradient(120deg,#0AE4FF,#8B5CF6)]" />
+                <div className="aspect-[16/9] rounded-lg bg-[linear-gradient(120deg,#04B6FF,#0058F4)]" />
                 <p className="mt-3 font-display text-sm font-bold">Pro plan</p>
                 <p className="mt-1 text-[10px] text-[#5b5f6b]">Everything you need to ship faster.</p>
                 <div className="mt-3 flex items-center justify-between">
@@ -342,7 +342,7 @@ export function DesignCanvasVisual() {
             <div>
               <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Fill</p>
               <div className="grid grid-cols-3 gap-1.5">
-                {["#0AE4FF", "#8B5CF6", "#06070A", "#F4F7FA", "#FF5C8A", "#FFC542"].map((c) => (
+                {["#061B49", "#0058F4", "#027AFF", "#04B6FF", "#F4F7FA", "#050914"].map((c) => (
                   <span key={c} className="aspect-square rounded-md border border-white/10" style={{ background: c }} />
                 ))}
               </div>
@@ -350,7 +350,7 @@ export function DesignCanvasVisual() {
             <div>
               <p className="mb-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Text</p>
               <p className="font-display text-3xl font-bold leading-none">Aa</p>
-              <p className="mt-1 text-muted-foreground">Syne · Bold · 48</p>
+              <p className="mt-1 text-muted-foreground">Montserrat · Bold · 48</p>
             </div>
             <div>
               <p className="mb-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Radius</p>
@@ -548,8 +548,8 @@ export function AgentChatVisual() {
 
 const COLOURS = [
   { name: "Midnight", swatch: "#1b1d24", tint: "text-foreground" },
-  { name: "Frost", swatch: "#0AE4FF", tint: "text-brand" },
-  { name: "Violet", swatch: "#8B5CF6", tint: "text-brand-2" },
+  { name: "Sky", swatch: "#04B6FF", tint: "text-brand-2" },
+  { name: "Royal", swatch: "#0058F4", tint: "text-primary" },
 ];
 
 export function StorefrontVisual() {

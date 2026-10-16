@@ -17,7 +17,7 @@ export default function NotFound() {
 
       <header className="container flex h-20 items-center">
         <Link href="/" aria-label="Snowdox — home">
-          <Logo />
+          <Logo variant="dark" className="h-11" />
         </Link>
       </header>
 

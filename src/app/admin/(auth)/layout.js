@@ -12,7 +12,7 @@ export default function AuthLayout({ children }) {
       <div className="relative flex w-full flex-col lg:w-1/2">
         <div className="flex h-16 items-center justify-between px-6 sm:px-10">
           <Link href="/" className="rounded-lg lg:invisible" aria-label="Snowdox home">
-            <Logo markClassName="h-7 w-7" />
+            <Logo className="h-10" />
           </Link>
           <ThemeToggle />
         </div>
@@ -31,7 +31,7 @@ export default function AuthLayout({ children }) {
         <div aria-hidden className="pointer-events-none absolute -bottom-28 -left-20 h-96 w-96 rounded-full bg-brand-2/20 blur-3xl" />
         <div className="relative flex max-w-sm flex-col items-center text-center">
           <Link href="/" aria-label="Snowdox home" className="rounded-xl">
-            <Logo markClassName="h-12 w-12" animated className="[&>span:last-child]:text-4xl" />
+            <Logo tagline className="h-28" />
           </Link>
           <p className="mt-6 text-balance font-display text-2xl font-semibold leading-tight text-foreground">
             Ship pages, posts &amp; SEO from one place.

@@ -12,7 +12,7 @@ export function AccessPending({ profile, email }) {
       <div aria-hidden className="pointer-events-none absolute -right-24 bottom-10 h-72 w-72 rounded-full bg-brand-2/15 blur-3xl" />
 
       <div className="relative w-full max-w-md space-y-6 rounded-2xl border bg-card p-8 shadow-elegant">
-        <Logo />
+        <Logo className="h-11" />
         <div className="space-y-3">
           <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-warning/30 bg-warning/10 text-warning">
             <ShieldAlert className="h-6 w-6" aria-hidden />

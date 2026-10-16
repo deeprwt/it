@@ -4,51 +4,56 @@
 
 /*
   ── Snowdox design tokens ─────────────────────────────────────────
-  The public site is always dark & loud. The admin dashboard can flip
-  to light: it sets data-theme="light" on <html>, which swaps the
+  Palette taken from the official logo (navy #061B49, royal #0058F4,
+  azure #027AFF, sky #04B6FF). The public site is dark; white sections
+  and the admin's light mode set data-theme="light", which swaps the
   semantic tokens below — components only ever use the tokens.
   ─────────────────────────────────────────────────────────────────
 */
 
 @layer base {
   :root {
-    --background: 228 22% 3%; /* #06070A */
-    --foreground: 210 25% 97%;
+    --background: 224 60% 5%; /* #050914 navy-black */
+    --foreground: 213 33% 97%;
 
-    --card: 228 16% 6%; /* #0D0E12 */
-    --card-foreground: 210 25% 97%;
+    --card: 224 45% 8%; /* #0B101E */
+    --card-foreground: 213 33% 97%;
 
-    --popover: 228 16% 7%;
-    --popover-foreground: 210 25% 97%;
+    --popover: 224 45% 9%;
+    --popover-foreground: 213 33% 97%;
 
-    --primary: 188 100% 52%; /* frost cyan */
-    --primary-foreground: 228 30% 5%;
+    --primary: 218 100% 48%; /* #005AF5 royal blue — white text 5.6:1 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 228 12% 11%;
-    --secondary-foreground: 210 25% 97%;
+    --secondary: 224 35% 12%;
+    --secondary-foreground: 213 33% 97%;
 
-    --muted: 228 10% 13%;
-    --muted-foreground: 220 9% 62%;
+    --muted: 224 30% 14%;
+    --muted-foreground: 219 16% 65%;
 
-    --accent: 228 12% 13%;
-    --accent-foreground: 210 25% 97%;
+    --accent: 224 32% 14%;
+    --accent-foreground: 213 33% 97%;
 
     --destructive: 0 72% 56%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 228 10% 15%;
-    --input: 228 10% 18%;
-    --ring: 188 100% 52%;
+    --border: 224 30% 16%;
+    --input: 224 28% 20%;
+    --ring: 211 100% 58%;
 
-    --brand: 188 100% 52%; /* #0AE4FF */
-    --brand-foreground: 228 30% 5%;
-    --brand-2: 258 92% 67%; /* #8B5CF6-ish ultraviolet */
+    --brand: 211 100% 58%; /* #2990FF azure — accents & links on dark */
+    --brand-foreground: 222 85% 10%; /* navy text on azure 5.8:1 */
+    --brand-2: 197 100% 50%; /* #00B7FF sky */
+
+    /* Button/fill gradient: royal → azure, white text ≥ 4.5:1 at both ends */
+    --gradient-from: 222 100% 42%;
+    --gradient-to: 212 100% 47%;
 
     --success: 142 70% 45%;
     --warning: 40 96% 54%;
 
-    --sidebar: 228 18% 5%;
-    --sidebar-border: 228 10% 13%;
+    --sidebar: 224 55% 6%;
+    --sidebar-border: 224 30% 13%;
 
     /* Charts — validated categorical palette (dark steps) */
     --chart-1: 213 76% 56%; /* #3987e5 */
@@ -71,7 +76,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 224 30% 9%;
 
-    --primary: 192 95% 38%;
+    --primary: 218 100% 46%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 220 16% 94%;
@@ -85,11 +90,11 @@
 
     --border: 220 14% 89%;
     --input: 220 14% 86%;
-    --ring: 192 95% 38%;
+    --ring: 218 100% 46%;
 
-    --brand: 192 95% 40%;
+    --brand: 218 100% 46%; /* #0056EB on white 6:1 */
     --brand-foreground: 0 0% 100%;
-    --brand-2: 258 75% 58%;
+    --brand-2: 199 100% 40%; /* #008BCC */
 
     --sidebar: 0 0% 100%;
     --sidebar-border: 220 14% 90%;
@@ -157,9 +162,41 @@
     @apply font-display font-bold leading-[0.95] tracking-tightest;
   }
 
+  /* Headline gradient, like the logo's "dox": sky → azure */
   .text-gradient {
-    @apply bg-brand-gradient bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, hsl(var(--brand-2)) 0%, hsl(var(--brand)) 55%, hsl(var(--brand-2)) 100%);
     background-size: 200% auto;
+  }
+
+  /* Footer wordmark glitch (two coloured copies, revealed on hover) */
+  .wordmark-glitch {
+    @apply pointer-events-none opacity-0 transition-opacity duration-150;
+  }
+  .wordmark-glitch-a {
+    color: hsl(var(--brand));
+  }
+  .wordmark-glitch-b {
+    color: hsl(var(--brand-2));
+  }
+  .group:hover .wordmark-glitch-a {
+    opacity: 0.75;
+    animation: glitch-a 0.42s steps(2, end) infinite;
+  }
+  .group:hover .wordmark-glitch-b {
+    opacity: 0.75;
+    animation: glitch-b 0.38s steps(2, end) infinite;
+  }
+
+  /* Logo artwork switching — see components/brand/Logo.jsx */
+  .logo-on-light {
+    display: none !important;
+  }
+  [data-theme="light"] .logo-on-light {
+    display: block !important;
+  }
+  [data-theme="light"] .logo-on-dark {
+    display: none !important;
   }
 
   .link-underline {

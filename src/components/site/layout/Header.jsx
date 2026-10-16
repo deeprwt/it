@@ -44,9 +44,9 @@ export function Header({ email }) {
         scrolled ? "border-b border-white/[0.06] bg-background/70 backdrop-blur-xl" : "border-b border-transparent"
       )}
     >
-      <div className="container flex h-16 items-center justify-between gap-6 md:h-20">
+      <div className="container flex h-[4.5rem] items-center justify-between gap-6 md:h-[5.5rem]">
         <Link href="/" aria-label="Snowdox — home" className="shrink-0">
-          <Logo markClassName="h-7 w-7 transition-transform duration-700 hover:rotate-180" />
+          <Logo variant="dark" priority className="h-12 transition-transform duration-300 hover:scale-[1.03] md:h-16" />
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
@@ -97,8 +97,8 @@ export function Header({ email }) {
             <SheetContent side="right" className="w-full border-white/10 bg-background p-0 sm:max-w-md">
               <SheetTitle className="sr-only">Site navigation</SheetTitle>
               <div className="flex h-full flex-col p-6">
-                <Logo />
-                <nav aria-label="Mobile" className="mt-12 flex-1">
+                <Logo variant="dark" tagline className="h-14" />
+                <nav aria-label="Mobile" className="mt-10 flex-1">
                   <ul className="space-y-1">
                     {navLinks.map((link, i) => (
                       <li

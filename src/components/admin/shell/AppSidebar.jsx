@@ -86,7 +86,7 @@ export function AppSidebar({ profile, newLeads = 0 }) {
       {/* Brand */}
       <div className={cn("flex h-16 shrink-0 items-center gap-2 px-5", open ? "justify-between" : "lg:justify-center lg:px-0")}>
         <Link href="/admin" onClick={onNavigate} aria-label="Snowdox dashboard home" className="flex items-center rounded-lg">
-          {open ? <Logo markClassName="h-7 w-7" /> : <LogoMark className="h-8 w-8" />}
+          {open ? <Logo className="h-11" priority /> : <LogoMark className="h-9" />}
         </Link>
         <Button
           variant="ghost"

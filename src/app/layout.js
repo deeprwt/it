@@ -1,4 +1,4 @@
-import { Inter, Syne, JetBrains_Mono } from "next/font/google";
+import { Inter, Montserrat, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { getSiteSettings } from "@/lib/cms";
 
@@ -8,10 +8,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const syne = Syne({
+// Brand typeface (from the Snowdox brand guide): Montserrat for headings.
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
-  variable: "--font-syne",
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -55,14 +56,14 @@ export async function generateMetadata() {
 }
 
 export const viewport = {
-  themeColor: "#06070A",
+  themeColor: "#050914",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${syne.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${montserrat.variable} ${mono.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-background font-sans text-foreground">{children}</body>
     </html>
   );

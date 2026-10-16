@@ -93,7 +93,7 @@ export default function SetupPage() {
 
       <div className="relative mx-auto max-w-3xl px-4 py-10 sm:px-6 md:py-16">
         <div className="mb-10 flex items-center justify-between">
-          <Logo />
+          <Logo className="h-11" />
           <ThemeToggle />
         </div>
 

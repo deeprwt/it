@@ -65,7 +65,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-syne)", "var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       letterSpacing: {
@@ -85,7 +85,7 @@ module.exports = {
         "glow-violet": "0 0 50px -12px hsl(var(--brand-2) / 0.55)",
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(120deg, hsl(var(--brand)) 0%, hsl(var(--brand-2)) 100%)",
+        "brand-gradient": "linear-gradient(120deg, hsl(var(--gradient-from)) 0%, hsl(var(--gradient-to)) 100%)",
         "grid-lines":
           "linear-gradient(to right, hsl(var(--foreground) / 0.06) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--foreground) / 0.06) 1px, transparent 1px)",
       },

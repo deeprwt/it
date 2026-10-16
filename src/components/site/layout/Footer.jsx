@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/brand/Logo";
+import { Wordmark } from "@/components/brand/Wordmark";
 import { footerNav } from "@/data/navigation";
 import { socialIcons } from "@/components/site/icons";
 
@@ -15,7 +16,7 @@ export function Footer({ settings }) {
 
       <div className="container relative grid grid-cols-1 gap-12 pb-10 pt-20 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Logo />
+          <Logo variant="dark" tagline className="h-20" />
           <p className="mt-5 max-w-sm text-muted-foreground">{settings.tagline}</p>
           <a
             href={`mailto:${settings.email}`}
@@ -69,14 +70,13 @@ export function Footer({ settings }) {
         </div>
       </div>
 
-      {/* Giant wordmark */}
-      <div className="container relative select-none" aria-hidden="true">
-        <p
-          data-text="snowdox"
-          className="glitch block w-full text-center font-display text-[23vw] font-extrabold lowercase leading-[0.8] tracking-tightest text-transparent [-webkit-text-stroke:1px_hsl(var(--foreground)/0.14)] transition-colors duration-700 hover:text-foreground/[0.04] 2xl:text-[17rem]"
-        >
-          snowdox
-        </p>
+      {/* Giant wordmark — logo outlines scaled to the container width, glitches on hover */}
+      <div className="container relative select-none pb-8 pt-4" aria-hidden="true">
+        <div className="group relative">
+          <Wordmark className="text-foreground/[0.16] transition-colors duration-700 group-hover:text-foreground/30" />
+          <Wordmark variant="fill" className="wordmark-glitch wordmark-glitch-a absolute inset-0" />
+          <Wordmark variant="fill" className="wordmark-glitch wordmark-glitch-b absolute inset-0" />
+        </div>
       </div>
 
       <div className="container relative flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] py-6 text-xs text-muted-foreground sm:flex-row">

@@ -144,7 +144,7 @@ export function organizationSchema(settings) {
     "@type": "Organization",
     name: settings.siteName,
     url: settings.siteUrl,
-    logo: absoluteUrl("/icon.svg", settings.siteUrl),
+    logo: absoluteUrl("/brand/snowdox-logo-512.png", settings.siteUrl),
     description: settings.defaultDescription,
     email: settings.email || undefined,
     telephone: settings.phone || undefined,
@@ -215,7 +215,7 @@ export function blogPostingSchema(post, settings) {
     publisher: {
       "@type": "Organization",
       name: settings.siteName,
-      logo: { "@type": "ImageObject", url: absoluteUrl("/icon.svg", settings.siteUrl) },
+      logo: { "@type": "ImageObject", url: absoluteUrl("/brand/snowdox-logo-512.png", settings.siteUrl) },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
