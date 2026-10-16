@@ -34,7 +34,7 @@ export default async function WorkPage() {
         breadcrumbs={[{ name: "Home", url: "/" }, { name: "Work" }]}
       />
       <WorkGrid />
-      <StatsBand />
+      <StatsBand light />
       <CtaSection email={settings.email} />
     </>
   );

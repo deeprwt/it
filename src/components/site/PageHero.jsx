@@ -53,14 +53,14 @@ export function PageHero({ eyebrow, title, accent, description, breadcrumbs = []
         )}
 
         <Reveal>
-          <h1 className="mt-5 max-w-5xl text-balance font-display text-5xl font-bold leading-[0.95] tracking-tightest sm:text-6xl md:text-7xl lg:text-8xl">
+          <h1 className="mt-5 max-w-4xl text-balance font-display text-4xl font-bold leading-[1.02] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.25rem]">
             {title} {accent && <span className="text-gradient animate-gradient-x">{accent}</span>}
           </h1>
         </Reveal>
 
         {description && (
           <Reveal delay={120}>
-            <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
+            <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
               {description}
             </p>
           </Reveal>

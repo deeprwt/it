@@ -45,7 +45,7 @@ export function Magnetic({ children, strength = 0.3, className }) {
       ref={ref}
       onPointerMove={onMove}
       onPointerLeave={onLeave}
-      className={cn("inline-block transition-transform duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)]", className)}
+      className={cn("inline-block transition-transform duration-300 [transition-timing-function:cubic-bezier(0.2,0.8,0.2,1)]", className)}
     >
       {children}
     </span>

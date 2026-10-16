@@ -13,7 +13,7 @@ export function Footer({ settings }) {
     <footer className="relative overflow-hidden border-t border-white/[0.06] bg-background">
       <div className="pointer-events-none absolute -top-40 left-1/2 h-80 w-[60rem] -translate-x-1/2 rounded-full bg-brand/10 blur-[120px]" />
 
-      <div className="container relative grid gap-12 pb-10 pt-20 md:grid-cols-12">
+      <div className="container relative grid grid-cols-1 gap-12 pb-10 pt-20 md:grid-cols-12">
         <div className="md:col-span-5">
           <Logo />
           <p className="mt-5 max-w-sm text-muted-foreground">{settings.tagline}</p>

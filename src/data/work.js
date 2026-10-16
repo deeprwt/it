@@ -12,7 +12,7 @@ export const work = [
     client: "Fintech scale-up",
     industry: "Fintech",
     year: "2026",
-    services: ["Product Design", "Web Engineering"],
+    services: ["UI/UX Design", "Web Development"],
     summary:
       "Rebuilt a 14-step KYC flow into a guided, mobile-first experience with live document capture and instant verification.",
     metrics: [
@@ -30,7 +30,7 @@ export const work = [
     client: "D2C apparel brand",
     industry: "Commerce",
     year: "2026",
-    services: ["Commerce", "SEO & Growth"],
+    services: ["E-commerce", "SEO"],
     summary:
       "Migrated a slow theme to a headless Shopify + Next.js storefront with edge rendering, instant search and a rebuilt PDP.",
     metrics: [
@@ -66,7 +66,7 @@ export const work = [
     client: "Health & fitness startup",
     industry: "Health",
     year: "2025",
-    services: ["Mobile Apps", "Product Design"],
+    services: ["Mobile Apps", "UI/UX Design"],
     summary:
       "Designed and built a cross-platform training app with offline workouts, wearables sync and subscription billing.",
     metrics: [
@@ -84,7 +84,7 @@ export const work = [
     client: "Logistics operator",
     industry: "Logistics",
     year: "2025",
-    services: ["Web Engineering", "Product Design"],
+    services: ["Web Development", "UI/UX Design"],
     summary:
       "Replaced spreadsheets with a live fleet dashboard — map tracking, ETA predictions and exception alerts in one screen.",
     metrics: [
@@ -102,7 +102,7 @@ export const work = [
     client: "Edtech marketplace",
     industry: "Education",
     year: "2024",
-    services: ["SEO & Growth", "Web Engineering"],
+    services: ["SEO", "Web Development"],
     summary:
       "Generated 9,000 high-quality course landing pages from structured data with schema markup and internal linking.",
     metrics: [

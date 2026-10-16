@@ -8,9 +8,12 @@ import {
   Manifesto,
   ProcessSection,
   StatsBand,
+  WhySection,
   FaqSection,
 } from "@/components/site/sections/HomeSections";
 import { CtaSection } from "@/components/site/sections/CtaSection";
+import { ToolsSection } from "@/components/site/tech/ToolsSection";
+import { LightSection } from "@/components/site/LightSection";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { TerminalPlayground } from "@/components/site/TerminalPlayground";
 import { WorkCard } from "@/components/site/work/WorkCard";
@@ -28,6 +31,12 @@ export function generateMetadata() {
   return buildPageMetadata("/");
 }
 
+/*
+  Rhythm: dark → white → dark … so the page never feels like one long slab.
+  Hero (dark) · Services (white) · Manifesto + Work (dark) · Tools (white)
+  · Process + Stats (dark) · Why (white) · Terminal (dark) · Blog (white)
+  · FAQ + CTA (dark)
+*/
 export default async function HomePage() {
   const [settings, posts] = await Promise.all([getSiteSettings(), getLatestPosts(3)]);
   const featured = work.filter((w) => w.featured).slice(0, 4);
@@ -43,7 +52,7 @@ export default async function HomePage() {
       <Manifesto />
 
       {/* Selected work */}
-      <section className="section">
+      <section className="section pt-0">
         <div className="container">
           <SectionHeading
             eyebrow="selected work"
@@ -61,9 +70,9 @@ export default async function HomePage() {
             </Button>
           </SectionHeading>
 
-          <div className="mt-16 grid gap-5 md:grid-cols-2">
+          <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2">
             {featured.map((item, i) => (
-              <Reveal key={item.slug} delay={(i % 2) * 120} className={i % 2 ? "md:mt-20" : ""}>
+              <Reveal key={item.slug} delay={(i % 2) * 120} className={i % 2 ? "md:mt-16" : ""}>
                 <WorkCard item={item} large />
               </Reveal>
             ))}
@@ -71,13 +80,15 @@ export default async function HomePage() {
         </div>
       </section>
 
+      <ToolsSection />
       <ProcessSection />
       <StatsBand />
+      <WhySection />
 
       {/* Interactive terminal */}
       <section className="section relative overflow-hidden">
         <div className="absolute right-0 top-1/2 -z-10 h-[30rem] w-[30rem] -translate-y-1/2 rounded-full bg-brand-2/15 blur-[140px]" />
-        <div className="container grid items-center gap-12 lg:grid-cols-12">
+        <div className="container grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <SectionHeading
               eyebrow="try it"
@@ -96,16 +107,16 @@ export default async function HomePage() {
       </section>
 
       {posts.length > 0 && (
-        <section className="section border-t border-white/[0.06]">
+        <LightSection className="section">
           <div className="container">
-            <SectionHeading eyebrow="from the blog" title="Notes from the build log" align="split">
-              <Button asChild variant="outline" className="rounded-full border-white/15">
+            <SectionHeading eyebrow="from the blog" title="Insights from the build log" align="split">
+              <Button asChild variant="outline" className="rounded-full">
                 <Link href="/blog">
                   Read the blog <ArrowUpRight />
                 </Link>
               </Button>
             </SectionHeading>
-            <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {posts.map((post, i) => (
                 <Reveal key={post.id} delay={i * 90}>
                   <PostCard post={post} />
@@ -113,7 +124,7 @@ export default async function HomePage() {
               ))}
             </div>
           </div>
-        </section>
+        </LightSection>
       )}
 
       <FaqSection faqs={faqs} />

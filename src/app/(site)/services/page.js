@@ -7,6 +7,8 @@ import { ProcessSection, FaqSection } from "@/components/site/sections/HomeSecti
 import { CtaSection } from "@/components/site/sections/CtaSection";
 import { Reveal } from "@/components/site/effects/Reveal";
 import { Icon } from "@/components/site/icons";
+import { ToolsSection } from "@/components/site/tech/ToolsSection";
+import { IndustriesSection } from "@/components/site/services/blocks";
 import { JsonLd, PageJsonLd } from "@/components/site/JsonLd";
 import { getSiteSettings } from "@/lib/cms";
 import { buildPageMetadata, breadcrumbSchema } from "@/lib/seo";
@@ -56,16 +58,16 @@ export default async function ServicesPage() {
               <Reveal as="li" key={s.slug} delay={i * 50}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="group relative isolate grid items-center gap-6 overflow-hidden border-b border-white/[0.08] py-10 md:grid-cols-12 md:py-12"
+                  className="group relative isolate grid grid-cols-1 items-center gap-6 overflow-hidden border-b border-white/[0.08] py-10 md:grid-cols-12 md:py-12"
                 >
                   {/* hover fill sweep */}
-                  <span className="absolute inset-0 -z-10 origin-left scale-x-0 bg-gradient-to-r from-brand/10 via-brand-2/10 to-transparent transition-transform duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-x-100" />
+                  <span className="absolute inset-0 -z-10 origin-left scale-x-0 bg-gradient-to-r from-brand/10 via-brand-2/10 to-transparent transition-transform duration-700 [transition-timing-function:cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-x-100" />
                   <span className="font-mono text-sm text-muted-foreground md:col-span-1">{s.index}</span>
                   <div className="flex items-center gap-5 md:col-span-6">
                     <span className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-card text-brand transition-all duration-500 group-hover:rotate-6 group-hover:shadow-glow sm:flex">
                       <Icon name={s.icon} className="h-6 w-6" />
                     </span>
-                    <h2 className="font-display text-4xl font-bold tracking-tightest transition-transform duration-500 group-hover:translate-x-2 md:text-5xl lg:text-6xl">
+                    <h2 className="font-display text-3xl font-bold tracking-tight transition-transform duration-500 group-hover:translate-x-2 md:text-4xl">
                       {s.title}
                     </h2>
                   </div>
@@ -89,7 +91,9 @@ export default async function ServicesPage() {
         </div>
       </section>
 
+      <ToolsSection />
       <ProcessSection />
+      <IndustriesSection light />
       <FaqSection faqs={faqs} />
       <CtaSection email={settings.email} />
     </>

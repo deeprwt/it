@@ -23,7 +23,7 @@ export function SectionHeading({ eyebrow, title, description, align = "left", cl
           </p>
         )}
         <Reveal>
-          <Tag className="mt-4 text-balance font-display text-4xl font-bold leading-[1] tracking-tightest sm:text-5xl md:text-6xl">
+          <Tag className="mt-4 text-balance font-display text-3xl font-bold leading-[1.05] tracking-tight sm:text-4xl md:text-[2.75rem] lg:text-5xl">
             {title}
           </Tag>
         </Reveal>

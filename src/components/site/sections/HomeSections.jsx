@@ -9,8 +9,10 @@ import { Spotlight, Counter } from "@/components/site/effects/Interactive";
 import { Marquee } from "@/components/site/effects/Marquee";
 import { ScrollWords } from "@/components/site/effects/ScrollWords";
 import { Icon } from "@/components/site/icons";
+import { LightSection } from "@/components/site/LightSection";
 import { services } from "@/data/services";
-import { stack, stats, processSteps as steps } from "@/data/site";
+import { stack, stats, principles, processSteps as steps } from "@/data/site";
+import { cn } from "@/lib/utils";
 
 /* ── Tech stack ticker ─────────────────────────────────────────── */
 
@@ -35,7 +37,7 @@ export function StackMarquee() {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="section scroll-mt-20">
+    <LightSection id="services" className="section scroll-mt-20">
       <div className="container">
         <SectionHeading
           eyebrow="what we ship"
@@ -48,14 +50,14 @@ export function ServicesSection() {
           align="split"
         />
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
             <Reveal key={s.slug} delay={(i % 3) * 90}>
-              <Spotlight asChild className="group block h-full rounded-2xl border border-white/[0.07] bg-card/60 p-7 transition-colors duration-500 hover:bg-card">
+              <Spotlight asChild className="group block h-full rounded-2xl border bg-card p-7 shadow-subtle transition-all duration-500 hover:-translate-y-1 hover:border-brand/40">
                 <Link href={`/services/${s.slug}`}>
                   <span className="spotlight-border" aria-hidden />
                   <div className="flex items-start justify-between">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-background text-brand transition-all duration-500 group-hover:scale-110 group-hover:border-brand/40 group-hover:shadow-glow">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand/10 text-brand transition-all duration-500 group-hover:scale-110 group-hover:bg-brand group-hover:text-brand-foreground">
                       <Icon name={s.icon} className="h-5 w-5" />
                     </span>
                     <span className="font-mono text-xs text-muted-foreground">{s.index}</span>
@@ -64,7 +66,7 @@ export function ServicesSection() {
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.short}</p>
                   <div className="mt-6 flex flex-wrap gap-1.5">
                     {s.tags.map((t) => (
-                      <Badge key={t} variant="outline" className="border-white/10 font-mono text-[10px] font-normal text-muted-foreground">
+                      <Badge key={t} variant="outline" className="font-mono text-[10px] font-normal text-muted-foreground">
                         {t}
                       </Badge>
                     ))}
@@ -79,7 +81,38 @@ export function ServicesSection() {
           ))}
         </div>
       </div>
-    </section>
+    </LightSection>
+  );
+}
+
+/* ── Why Snowdox ───────────────────────────────────────────────── */
+
+export function WhySection({ light = true }) {
+  const Wrapper = light ? LightSection : "section";
+  return (
+    <Wrapper className="section">
+      <div className="container">
+        <SectionHeading
+          eyebrow="why snowdox"
+          title="Why ambitious teams choose us"
+          description="Senior people, honest advice and a process built around shipping — not billable hours."
+          align="split"
+        />
+        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {principles.map((p, i) => (
+            <Reveal key={p.title} delay={i * 80}>
+              <div className="group h-full rounded-2xl border bg-card p-7 shadow-subtle transition-all duration-500 hover:-translate-y-1 hover:border-brand/40">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-gradient text-white shadow-glow transition-transform duration-500 group-hover:rotate-12">
+                  <Icon name={p.icon} className="h-5 w-5" />
+                </span>
+                <h3 className="mt-8 font-display text-xl font-bold tracking-tight">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </Wrapper>
   );
 }
 
@@ -94,7 +127,7 @@ export function Manifesto({
         <p className="eyebrow mb-8">
           <span className="text-muted-foreground">{"//"}</span> manifesto
         </p>
-        <ScrollWords text={text} className="max-w-6xl text-3xl sm:text-5xl md:text-6xl lg:text-7xl" />
+        <ScrollWords text={text} className="max-w-5xl text-2xl sm:text-4xl md:text-5xl" />
       </div>
     </section>
   );
@@ -105,7 +138,7 @@ export function Manifesto({
 export function ProcessSection({ title = "How we ship", description }) {
   return (
     <section className="section relative overflow-hidden border-y border-white/[0.06] bg-card/20">
-      <div className="container grid gap-14 lg:grid-cols-12">
+      <div className="container grid grid-cols-1 gap-14 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-32">
             <SectionHeading
@@ -148,7 +181,7 @@ export function ProcessSection({ title = "How we ship", description }) {
               <p className="mt-2 font-mono text-xs text-muted-foreground">
                 <span className="text-success">$</span> {step.command}
               </p>
-              <h3 className="mt-4 font-display text-3xl font-bold tracking-tight md:text-4xl">{step.title}</h3>
+              <h3 className="mt-4 font-display text-2xl font-bold tracking-tight md:text-3xl">{step.title}</h3>
               <p className="mt-3 max-w-lg leading-relaxed text-muted-foreground">{step.body}</p>
             </Reveal>
           ))}
@@ -160,14 +193,15 @@ export function ProcessSection({ title = "How we ship", description }) {
 
 /* ── Stats band ────────────────────────────────────────────────── */
 
-export function StatsBand() {
+export function StatsBand({ light = false }) {
+  const Wrapper = light ? LightSection : "section";
   return (
-    <section aria-label="Studio in numbers" className="section">
+    <Wrapper aria-label="Studio in numbers" className="section">
       <div className="container">
-        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.07] lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border bg-border lg:grid-cols-4">
           {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 80} className="bg-background p-8 md:p-10">
-              <p className="font-display text-5xl font-extrabold tracking-tightest md:text-7xl">
+            <Reveal key={s.label} delay={i * 80} className={cn("p-8 md:p-10", light ? "bg-card" : "bg-background")}>
+              <p className="font-display text-4xl font-bold tracking-tight md:text-6xl">
                 <Counter value={s.value} decimals={s.decimals || 0} suffix={s.suffix} className="text-gradient" />
               </p>
               <p className="mt-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">{s.label}</p>
@@ -175,20 +209,21 @@ export function StatsBand() {
           ))}
         </div>
       </div>
-    </section>
+    </Wrapper>
   );
 }
 
 /* ── FAQ ───────────────────────────────────────────────────────── */
 
-export function FaqSection({ faqs, title = "Questions, answered.", eyebrow = "faq" }) {
+export function FaqSection({ faqs, title = "Questions, answered.", eyebrow = "faq", light = false }) {
+  const Wrapper = light ? LightSection : "section";
   return (
-    <section className="section">
-      <div className="container grid gap-12 lg:grid-cols-12">
+    <Wrapper className="section">
+      <div className="container grid grid-cols-1 gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <SectionHeading eyebrow={eyebrow} title={title} description="Can't find what you're looking for? Ask us anything — a human replies." />
           <Reveal delay={200} className="mt-8">
-            <Button asChild variant="outline" className="rounded-full border-white/15">
+            <Button asChild variant="outline" className="rounded-full">
               <Link href="/contact">
                 Ask a question <ArrowUpRight />
               </Link>
@@ -196,9 +231,9 @@ export function FaqSection({ faqs, title = "Questions, answered.", eyebrow = "fa
           </Reveal>
         </div>
         <Reveal className="lg:col-span-8" delay={100}>
-          <Accordion type="single" collapsible defaultValue="faq-0" className="border-t border-white/[0.08]">
+          <Accordion type="single" collapsible defaultValue="faq-0" className="border-t">
             {faqs.map((f, i) => (
-              <AccordionItem key={f.q} value={`faq-${i}`} className="border-white/[0.08]">
+              <AccordionItem key={f.q} value={`faq-${i}`}>
                 <AccordionTrigger className="font-display text-lg font-semibold md:text-xl">
                   <span className="flex items-baseline gap-4">
                     <span className="font-mono text-xs font-normal text-brand">0{i + 1}</span>
@@ -211,6 +246,6 @@ export function FaqSection({ faqs, title = "Questions, answered.", eyebrow = "fa
           </Accordion>
         </Reveal>
       </div>
-    </section>
+    </Wrapper>
   );
 }

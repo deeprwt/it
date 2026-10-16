@@ -11,12 +11,12 @@ export const footerNav = [
   {
     title: "Services",
     links: [
-      { label: "Web Engineering", href: "/services/web-development" },
-      { label: "Product Design", href: "/services/product-design" },
-      { label: "Mobile Apps", href: "/services/mobile-apps" },
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "UI/UX & Product Design", href: "/services/product-design" },
+      { label: "Mobile App Development", href: "/services/mobile-apps" },
       { label: "AI & Automation", href: "/services/ai-automation" },
-      { label: "Commerce", href: "/services/ecommerce" },
-      { label: "SEO & Growth", href: "/services/seo-growth" },
+      { label: "E-commerce Development", href: "/services/ecommerce" },
+      { label: "SEO Services", href: "/services/seo-growth" },
     ],
   },
   {

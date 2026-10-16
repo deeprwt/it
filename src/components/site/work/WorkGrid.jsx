@@ -31,7 +31,7 @@ export function WorkGrid() {
           ))}
         </ToggleGroup>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {items.map((item, i) => (
             <Reveal key={item.slug} delay={(i % 2) * 100}>
               <WorkCard item={item} />

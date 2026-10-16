@@ -1,4 +1,4 @@
-import { services } from "@/data/services";
+import { services, serviceMetaTitle } from "@/data/services";
 
 /**
  * Registry of every public route. The dashboard's "Pages SEO" screen lists
@@ -32,7 +32,7 @@ export const staticPages = [
     path: `/services/${s.slug}`,
     label: s.title,
     group: "Services",
-    title: `${s.title} Services`,
+    title: serviceMetaTitle(s),
     description: s.short,
     priority: 0.8,
     changefreq: "monthly",

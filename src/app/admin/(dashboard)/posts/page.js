@@ -9,12 +9,14 @@ export const metadata = { title: "Blog posts" };
 
 const STATUSES = ["all", "published", "draft", "scheduled", "archived"];
 const first = (v) => (Array.isArray(v) ? v[0] : v);
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export default async function PostsPage({ searchParams }) {
   const params = await searchParams;
   const q = String(first(params?.q) || "").slice(0, 100);
   const status = STATUSES.includes(first(params?.status)) ? first(params.status) : "all";
-  const category = first(params?.category) || "all";
+  const rawCategory = first(params?.category);
+  const category = UUID.test(rawCategory || "") ? rawCategory : "all";
   const page = Math.max(1, Number.parseInt(first(params?.page), 10) || 1);
 
   const [result, categories] = await Promise.all([

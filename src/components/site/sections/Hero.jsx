@@ -8,7 +8,7 @@ import { Magnetic } from "@/components/site/effects/Interactive";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden pt-28 md:pt-32">
+    <section className="relative isolate flex min-h-[min(100svh,1000px)] flex-col overflow-hidden pt-28 md:pt-32">
       {/* Background layers */}
       <div className="absolute inset-0 -z-20 bg-grid-lines mask-radial [background-size:64px_64px] opacity-70" />
       <div className="absolute -left-40 top-10 -z-20 h-[36rem] w-[36rem] animate-float rounded-full bg-brand/20 blur-[140px]" />
@@ -16,30 +16,25 @@ export function Hero() {
         className="absolute -right-32 bottom-0 -z-20 h-[32rem] w-[32rem] animate-float rounded-full bg-brand-2/20 blur-[140px]"
         style={{ animationDelay: "-3s" }}
       />
-      <CodeSnow className="-z-10" />
+      {/* Faded behind the headline, full strength on the right */}
+      <CodeSnow className="-z-10 [-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.35)_40%,#000_70%)] [mask-image:linear-gradient(90deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.35)_40%,#000_70%)]" />
 
-      <div className="container grid flex-1 items-center gap-14 pb-16 lg:grid-cols-12 lg:gap-10">
+      <div className="container grid grid-cols-1 flex-1 items-center gap-14 pb-16 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-7">
           <div className="inline-flex animate-in fade-in slide-in-from-bottom-3 items-center gap-3 rounded-full border border-white/10 bg-card/60 py-1.5 pl-1.5 pr-4 font-mono text-[11px] uppercase tracking-widest text-muted-foreground backdrop-blur fill-mode-both [animation-duration:700ms]">
             <span className="rounded-full bg-brand px-2 py-0.5 font-semibold text-brand-foreground">❄ snowdox</span>
             design <span className="text-brand">&amp;&amp;</span> engineering studio
           </div>
 
-          <h1 className="mt-8 font-display text-[clamp(3.1rem,9vw,8.4rem)] font-extrabold leading-[0.88] tracking-tightest">
+          <h1 className="mt-7 font-display text-[clamp(2.4rem,5vw,4.6rem)] font-bold leading-[1] tracking-tight">
             <span className="block animate-in fade-in slide-in-from-bottom-6 fill-mode-both [animation-duration:900ms]">
-              We code
+              We code brands
             </span>
             <span
               className="block animate-in fade-in slide-in-from-bottom-6 fill-mode-both [animation-duration:900ms]"
-              style={{ animationDelay: "120ms" }}
+              style={{ animationDelay: "140ms" }}
             >
-              brands that
-            </span>
-            <span
-              className="block animate-in fade-in slide-in-from-bottom-6 fill-mode-both [animation-duration:900ms]"
-              style={{ animationDelay: "240ms" }}
-            >
-              <ScrambleText text="move." className="text-gradient animate-gradient-x" delay={650} duration={1100} />
+              that <ScrambleText text="move." className="text-gradient animate-gradient-x" delay={650} duration={1100} />
             </span>
           </h1>
 

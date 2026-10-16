@@ -56,7 +56,6 @@ export function ScrollWords({ text, className }) {
           key={i}
           data-word
           className={cn("transition-opacity duration-200", t.accent && "text-gradient")}
-          style={{ opacity: 0.14 }}
         >
           {t.word}
           {i < tokens.length - 1 ? " " : ""}

@@ -111,7 +111,27 @@ src/
     └── admin-data.js     dashboard reads
 ```
 
-## 4. Motion & effects (`src/components/site/effects`)
+## 4. Service pages — one design per service
+
+Each service has its **own page layout**, not a shared template
+(`src/components/site/services/pages.jsx`), with copy in `src/data/services.js`:
+
+| Service | Hero visual | Unique sections |
+| --- | --- | --- |
+| Web Development | Lighthouse report in a browser | Performance budget + code, comparison table |
+| UI/UX & Product Design | Figma-style canvas with live cursor | Design-system showcase, design principles |
+| Mobile App Development | iOS + Android phones with push toast | Built-in features grid, cross-platform vs native table |
+| AI & Automation | Support agent answering with sources | Workflow diagram, use cases by team, guardrails checklist |
+| E-commerce Development | Product page + cart drawer | Conversion funnel |
+| SEO Services | Google results where your site climbs to #1 | KPIs, sample monthly report (chart + keyword table), audit scores |
+
+Shared blocks (sub-services grid, process, tools tabs, industries, FAQ) live in
+`services/blocks.jsx`. White sections use `<LightSection>`, which flips the theme
+tokens locally, so any token-based component renders correctly on white.
+Technology logos come from `simple-icons` and are server-rendered
+(`src/components/site/tech/registry.js`).
+
+## 5. Motion & effects (`src/components/site/effects`)
 
 - **CodeSnow** — code glyphs falling like snow, depth-layered, pushed away by the cursor
 - **ScrambleText** — text "decodes" from random glyphs (hero, eyebrows, nav hover)
@@ -123,7 +143,7 @@ src/
 
 All effects pause off-screen and respect `prefers-reduced-motion`.
 
-## 5. Before launch — content to replace
+## 6. Before launch — content to replace
 
 `src/data/work.js` (case studies), `src/data/site.js` (`stats`, socials, email),
 and `src/data/careers.js` contain **placeholder content**. Replace them with real

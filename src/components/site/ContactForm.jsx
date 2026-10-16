@@ -61,7 +61,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-7 rounded-2xl border border-white/10 bg-card/60 p-6 backdrop-blur md:p-10">
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <div className="space-y-2.5">
           <Label htmlFor="name">Your name *</Label>
           <Input id="name" required autoComplete="name" value={form.name} onChange={set("name")} placeholder="Ada Lovelace" className="h-12" />

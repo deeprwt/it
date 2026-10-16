@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }) {
             </div>
 
             <Reveal>
-              <h1 className="mt-6 text-balance font-display text-4xl font-bold leading-[1.02] tracking-tightest sm:text-5xl md:text-6xl">
+              <h1 className="mt-6 text-balance font-display text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl">
                 {post.title}
               </h1>
             </Reveal>
@@ -136,7 +136,7 @@ export default async function BlogPostPage({ params }) {
           </div>
         )}
 
-        <div className="container mt-14 grid max-w-6xl gap-12 pb-20 lg:grid-cols-12">
+        <div className="container mt-14 grid grid-cols-1 max-w-6xl gap-12 pb-20 lg:grid-cols-12">
           <div className="lg:col-span-8 lg:col-start-1">
             <div className="prose-snowdox md:prose-lg" dangerouslySetInnerHTML={{ __html: html }} />
 
@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }) {
         <section className="section border-t border-white/[0.06]">
           <div className="container">
             <SectionHeading eyebrow="keep reading" title="Related articles" />
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((p, i) => (
                 <Reveal key={p.id} delay={i * 80}>
                   <PostCard post={p} />

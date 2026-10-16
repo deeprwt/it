@@ -49,7 +49,7 @@ export default async function ContactPage() {
       />
 
       <section className="pb-24">
-        <div className="container grid gap-10 lg:grid-cols-12">
+        <div className="container grid grid-cols-1 gap-10 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
             <ContactForm />
           </Reveal>
@@ -104,7 +104,7 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      <FaqSection faqs={faqs.slice(0, 4)} />
+      <FaqSection faqs={faqs.slice(0, 4)} light />
     </>
   );
 }

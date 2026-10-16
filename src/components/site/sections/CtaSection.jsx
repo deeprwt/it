@@ -13,7 +13,7 @@ export function CtaSection({ email = "hello@snowdox.com" }) {
 
       <Marquee duration={30} className="pointer-events-none mb-16 opacity-[0.07]">
         {["Let's build", "something", "loud", "✳"].map((w, i) => (
-          <span key={i} className="mx-6 font-display text-7xl font-extrabold uppercase tracking-tight md:text-9xl">
+          <span key={i} className="mx-6 font-display text-6xl font-extrabold uppercase tracking-tight md:text-8xl">
             {w}
           </span>
         ))}
@@ -24,7 +24,7 @@ export function CtaSection({ email = "hello@snowdox.com" }) {
           <p className="eyebrow justify-center">
             <span className="text-muted-foreground">{"//"}</span> got a project?
           </p>
-          <h2 className="mx-auto mt-6 max-w-5xl text-balance font-display text-5xl font-bold leading-[0.95] tracking-tightest sm:text-6xl md:text-8xl">
+          <h2 className="mx-auto mt-6 max-w-4xl text-balance font-display text-4xl font-bold leading-[1.02] tracking-tight sm:text-5xl md:text-6xl">
             Let&apos;s build something <span className="text-gradient animate-gradient-x">impossible to ignore.</span>
           </h2>
         </Reveal>

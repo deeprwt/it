@@ -70,7 +70,7 @@ export function BlogIndex({ posts, categories }) {
           <Reveal>
             <Link
               href={`/blog/${featured.slug}`}
-              className="group grid gap-8 rounded-2xl border border-white/[0.07] bg-card/50 p-3 transition-colors duration-500 hover:bg-card lg:grid-cols-2"
+              className="group grid grid-cols-1 gap-8 rounded-2xl border border-white/[0.07] bg-card/50 p-3 transition-colors duration-500 hover:bg-card lg:grid-cols-2"
             >
               <PostCover post={featured} className="aspect-[16/10] lg:aspect-auto lg:min-h-[380px]" priority sizes="(min-width: 1024px) 50vw, 100vw" />
               <div className="flex flex-col justify-center p-4 lg:p-8">
@@ -146,7 +146,7 @@ export function BlogIndex({ posts, categories }) {
         )}
 
         {results.length ? (
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {results.map((post, i) => (
               <Reveal key={post.id} delay={(i % 3) * 80}>
                 <PostCard post={post} />

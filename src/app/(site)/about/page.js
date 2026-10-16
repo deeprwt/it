@@ -7,6 +7,8 @@ import { Reveal } from "@/components/site/effects/Reveal";
 import { Spotlight } from "@/components/site/effects/Interactive";
 import { CodeWindow } from "@/components/site/CodeWindow";
 import { Icon } from "@/components/site/icons";
+import { LightSection } from "@/components/site/LightSection";
+import { ToolsSection } from "@/components/site/tech/ToolsSection";
 import { JsonLd, PageJsonLd } from "@/components/site/JsonLd";
 import { getSiteSettings } from "@/lib/cms";
 import { buildPageMetadata, breadcrumbSchema, organizationSchema } from "@/lib/seo";
@@ -77,7 +79,7 @@ export default async function AboutPage() {
       />
 
       <section className="pb-12">
-        <div className="container grid items-center gap-12 lg:grid-cols-2">
+        <div className="container grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <CodeWindow code={STUDIO_CODE} filename="studio.config.ts" highlightLine={4} />
           </Reveal>
@@ -99,15 +101,15 @@ export default async function AboutPage() {
 
       <Manifesto text="Good design is *invisible.* Great design is *unforgettable.* We build the second kind — and we *measure* everything so you know it worked." />
 
-      <section className="section">
+      <LightSection className="section">
         <div className="container">
           <SectionHeading eyebrow="principles" title="What we believe" align="split" description="Four rules every project at Snowdox lives by." />
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {principles.map((p, i) => (
               <Reveal key={p.title} delay={i * 80}>
-                <Spotlight className="group h-full rounded-2xl border border-white/[0.07] bg-card/50 p-7">
+                <Spotlight className="group h-full rounded-2xl border bg-card p-7 shadow-subtle">
                   <span className="spotlight-border" aria-hidden />
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-background text-brand transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
                     <Icon name={p.icon} className="h-5 w-5" />
                   </span>
                   <h3 className="mt-8 font-display text-2xl font-bold tracking-tight">{p.title}</h3>
@@ -117,14 +119,15 @@ export default async function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </LightSection>
 
       <StatsBand />
+      <ToolsSection />
 
       <section className="section border-t border-white/[0.06]">
         <div className="container">
           <SectionHeading eyebrow="engagement models" title="Work with us your way" align="center" />
-          <div className="mt-14 grid gap-4 md:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
             {MODELS.map((m, i) => (
               <Reveal key={m.title} delay={i * 100}>
                 <Spotlight className="group h-full rounded-2xl border border-white/[0.07] bg-card/50 p-8">

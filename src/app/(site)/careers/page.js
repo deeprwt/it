@@ -7,6 +7,7 @@ import { CtaSection } from "@/components/site/sections/CtaSection";
 import { Reveal } from "@/components/site/effects/Reveal";
 import { Spotlight } from "@/components/site/effects/Interactive";
 import { Icon } from "@/components/site/icons";
+import { LightSection } from "@/components/site/LightSection";
 import { JsonLd, PageJsonLd } from "@/components/site/JsonLd";
 import { getSiteSettings } from "@/lib/cms";
 import { buildPageMetadata, breadcrumbSchema } from "@/lib/seo";
@@ -49,14 +50,15 @@ export default async function CareersPage() {
         </Button>
       </PageHero>
 
-      <section className="pb-24">
+      <LightSection className="section">
         <div className="container">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <SectionHeading eyebrow="perks" title="Life at Snowdox" align="split" description="We take care of the crew so the crew can do their best work." />
+          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {perks.map((p, i) => (
               <Reveal key={p.title} delay={(i % 3) * 80}>
-                <Spotlight className="group flex h-full items-start gap-5 rounded-2xl border border-white/[0.07] bg-card/50 p-6">
+                <Spotlight className="group flex h-full items-start gap-5 rounded-2xl border bg-card p-6 shadow-subtle">
                   <span className="spotlight-border" aria-hidden />
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-background text-brand">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand/10 text-brand">
                     <Icon name={p.icon} className="h-5 w-5" />
                   </span>
                   <div>
@@ -68,7 +70,7 @@ export default async function CareersPage() {
             ))}
           </div>
         </div>
-      </section>
+      </LightSection>
 
       <section id="openings" className="section scroll-mt-20 border-t border-white/[0.06]">
         <div className="container">
@@ -78,7 +80,7 @@ export default async function CareersPage() {
               <Reveal as="li" key={role.title} delay={i * 60}>
                 <a
                   href={applyHref(role.title)}
-                  className="group relative isolate grid items-center gap-4 overflow-hidden border-b border-white/[0.08] py-8 md:grid-cols-12"
+                  className="group relative isolate grid grid-cols-1 items-center gap-4 overflow-hidden border-b border-white/[0.08] py-8 md:grid-cols-12"
                 >
                   <span className="absolute inset-0 -z-10 origin-left scale-x-0 bg-gradient-to-r from-brand/10 to-transparent transition-transform duration-700 group-hover:scale-x-100" />
                   <div className="md:col-span-5">

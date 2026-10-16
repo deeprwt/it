@@ -58,7 +58,7 @@ export function PostCard({ post, className }) {
     <Spotlight
       asChild
       className={cn(
-        "group flex h-full flex-col rounded-2xl border border-white/[0.07] bg-card/50 p-3 transition-colors duration-500 hover:bg-card",
+        "group flex h-full flex-col rounded-2xl border bg-card/60 p-3 shadow-subtle transition-all duration-500 hover:-translate-y-1 hover:border-brand/40 hover:bg-card",
         className
       )}
     >

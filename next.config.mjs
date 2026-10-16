@@ -4,6 +4,8 @@ const nextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    // Allow local images with query strings (e.g. the generated /api/og cards).
+    localPatterns: [{ pathname: "/**" }],
     remotePatterns: [
       { protocol: "https", hostname: "**.supabase.co" },
       { protocol: "https", hostname: "**.supabase.in" },
