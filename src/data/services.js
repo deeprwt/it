@@ -700,6 +700,303 @@ export default async function Home() {
       },
     ],
   },
+
+  /* ─────────────────────── SOCIAL MEDIA ─────────────────────── */
+  {
+    slug: "social-media-marketing",
+    index: "07",
+    icon: "Share2",
+    title: "Social Media Marketing",
+    short: "Strategy, content and community management that turns followers into customers.",
+    tagline: "Scroll-stopping content. Communities that actually buy.",
+    description:
+      "We plan, create and manage social media that people want to follow — Reels, carousels, stories and campaigns built around your brand voice, posted consistently and measured against the numbers that matter to your business.",
+    tags: ["Instagram", "LinkedIn", "Reels", "Community"],
+    credentials: ["Free social media audit", "Monthly content calendar", "In-house designers & editors", "Reports every month"],
+    subServicesTitle: "Our social media marketing services",
+    subServices: [
+      {
+        icon: "Target",
+        title: "Social media strategy",
+        body: "Audience research, positioning and a channel plan that ties every post to a business goal.",
+        points: ["Competitor & audience audit", "Content pillars & tone of voice", "Channel & posting plan"],
+      },
+      {
+        icon: "PenLine",
+        title: "Content creation & design",
+        body: "On-brand posts, carousels and stories designed to stop the scroll and earn the save.",
+        points: ["Carousels & static posts", "Story & highlight design", "Copywriting & hashtags"],
+      },
+      {
+        icon: "Clapperboard",
+        title: "Reels & short-form video",
+        body: "Hook-first vertical video — scripted, shot and edited for Instagram, YouTube Shorts and Facebook.",
+        points: ["Scripts & hooks", "Shoot direction & editing", "Trending audio & captions"],
+      },
+      {
+        icon: "MessageCircle",
+        title: "Community management",
+        body: "We reply, moderate and start conversations so your audience feels heard — every single day.",
+        points: ["Comment & DM management", "Moderation & escalation", "Engagement sessions"],
+      },
+      {
+        icon: "Handshake",
+        title: "Influencer & creator marketing",
+        body: "Find, brief and manage creators who genuinely fit your brand — and track what they deliver.",
+        points: ["Creator discovery & vetting", "Briefs & contracts", "UGC for ads"],
+      },
+      {
+        icon: "Megaphone",
+        title: "Paid social",
+        body: "Boost what works with targeted Meta and LinkedIn campaigns that grow reach, leads and sales.",
+        points: ["Audience targeting", "Creative testing", "Retargeting"],
+      },
+      {
+        icon: "Eye",
+        title: "Social listening & reputation",
+        body: "Track mentions, sentiment and competitors so you can respond fast and spot trends early.",
+        points: ["Brand mention tracking", "Sentiment reports", "Crisis response plan"],
+      },
+      {
+        icon: "BarChart3",
+        title: "Analytics & reporting",
+        body: "Clear monthly reports on reach, engagement, followers and the leads and sales social drives.",
+        points: ["Monthly performance report", "Top-post analysis", "Next-month recommendations"],
+      },
+    ],
+    platforms: [
+      { id: "instagram", body: "Reels, carousels and stories for brand love and discovery." },
+      { id: "facebook", body: "Community groups, events and high-reach paid campaigns." },
+      { id: "linkedin", body: "Thought leadership and B2B lead generation." },
+      { id: "youtube", body: "Shorts and long-form video that builds trust and search reach." },
+      { id: "x", body: "Real-time conversation, launches and industry updates." },
+      { id: "pinterest", body: "Visual discovery that drives evergreen traffic to your site." },
+      { id: "threads", body: "Casual, text-first conversations with your community." },
+      { id: "whatsapp", body: "Broadcasts and channels for repeat customers." },
+    ],
+    calendar: [
+      { day: "Mon", posts: [{ type: "Reel", title: "Behind the scenes", platform: "Instagram" }] },
+      { day: "Tue", posts: [{ type: "Carousel", title: "5 tips for your niche", platform: "LinkedIn" }] },
+      { day: "Wed", posts: [{ type: "Story", title: "Poll: this or that?", platform: "Instagram" }, { type: "Post", title: "Client win", platform: "Facebook" }] },
+      { day: "Thu", posts: [{ type: "Reel", title: "Trend remix", platform: "Instagram" }] },
+      { day: "Fri", posts: [{ type: "Carousel", title: "Myth vs fact", platform: "Instagram" }, { type: "Short", title: "Quick how-to", platform: "YouTube" }] },
+      { day: "Sat", posts: [{ type: "Story", title: "Weekend offer", platform: "Instagram" }] },
+      { day: "Sun", posts: [{ type: "Post", title: "Community spotlight", platform: "Facebook" }] },
+    ],
+    kpis: [
+      { icon: "Users", title: "Reach & impressions", body: "How many of the right people see your brand each month." },
+      { icon: "Heart", title: "Engagement rate", body: "Likes, comments, saves and shares relative to reach." },
+      { icon: "UserPlus", title: "Follower growth", body: "Quality followers who match your ideal customer." },
+      { icon: "MousePointerClick", title: "Leads & sales", body: "Profile clicks, DMs, form fills and orders from social." },
+    ],
+    pillars: [
+      { icon: "Sparkles", title: "Thumb-stopping creative", body: "In-house designers and video editors — content made for each platform, not resized." },
+      { icon: "CalendarDays", title: "Always consistent", body: "A planned calendar approved a month ahead, so your brand never goes quiet." },
+      { icon: "TrendingUp", title: "Tied to revenue", body: "We track the leads and sales social brings in — not just likes." },
+    ],
+    process: [
+      { title: "Audit & research", body: "Review your profiles, competitors and audience to find the opportunities." },
+      { title: "Strategy & pillars", body: "Define goals, content pillars, tone of voice and the channel mix." },
+      { title: "Content calendar", body: "A month of posts planned and shared with you for approval." },
+      { title: "Create & publish", body: "Design, shoot, edit and schedule every post at the best times." },
+      { title: "Engage & grow", body: "Daily community management, creator collaborations and paid boosts." },
+      { title: "Report & refine", body: "Monthly results review and a sharper plan for next month." },
+    ],
+    comparison: [
+      ["Content made for each platform", true, "Resized posts"],
+      ["In-house design & video editing", true, false],
+      ["Monthly calendar approved in advance", true, "Sometimes"],
+      ["Daily community management", true, false],
+      ["Leads & sales tracked from social", true, "Likes only"],
+      ["No long-term lock-in", true, false],
+    ],
+    tools: [
+      { label: "Platforms", items: ["instagram", "facebook", "linkedin", "youtube", "x", "pinterest", "threads"] },
+      { label: "Create", items: ["canva", "figma", "illustrator"] },
+      { label: "Schedule & listen", items: ["hootsuite", "buffer", "meta"] },
+      { label: "Measure", items: ["ga4", "gtm", "looker", "hubspot"] },
+    ],
+    faqs: [
+      {
+        q: "Which social media platforms should my business be on?",
+        a: "Wherever your customers already spend time. For most B2C brands that's Instagram, Facebook and YouTube; for B2B it's usually LinkedIn. We recommend a focused mix after auditing your audience — doing two platforms well beats doing six badly.",
+      },
+      {
+        q: "How many posts will you publish each month?",
+        a: "It depends on your plan and platforms, typically 12–30 pieces of content a month including Reels, carousels and stories. Every month's calendar is shared with you for approval before anything goes live.",
+      },
+      {
+        q: "Do you create the content or do we provide it?",
+        a: "We do — strategy, copy, design and video editing are all in-house. If you have product photos, footage or brand assets we'll use them, and we can direct shoots when needed.",
+      },
+      {
+        q: "How long before we see results from social media?",
+        a: "Engagement usually improves within the first month of consistent posting. Follower growth and leads from social build over 3–6 months, and paid social can speed that up.",
+      },
+      {
+        q: "Do you also run social media ads?",
+        a: "Yes. We run paid social on Meta (Instagram & Facebook) and LinkedIn, either alongside organic content or as part of our performance marketing service.",
+      },
+    ],
+  },
+
+  /* ──────────────────── PERFORMANCE MARKETING ──────────────────── */
+  {
+    slug: "performance-marketing",
+    index: "08",
+    icon: "Crosshair",
+    title: "Performance Marketing",
+    short: "Google, Meta and LinkedIn ads managed for return on ad spend — not vanity clicks.",
+    tagline: "Every click tracked. Every campaign built to profit.",
+    description:
+      "We plan, launch and optimise paid campaigns across Google, Meta, LinkedIn and YouTube — with airtight conversion tracking, relentless creative testing and transparent reporting on what each rupee and dollar brings back.",
+    tags: ["Google Ads", "Meta Ads", "ROAS", "Lead Gen"],
+    credentials: ["Free ad account audit", "You own every ad account", "Weekly optimisation", "Live ROAS dashboard"],
+    subServicesTitle: "Our performance marketing services",
+    subServices: [
+      {
+        icon: "Search",
+        title: "Google Ads",
+        body: "Search, Performance Max and Shopping campaigns that capture people ready to buy.",
+        points: ["Search & PMax", "Shopping & Merchant Center", "Negative keyword mining"],
+      },
+      {
+        icon: "Megaphone",
+        title: "Meta Ads (Facebook & Instagram)",
+        body: "Creative-led campaigns that find new customers and bring past visitors back.",
+        points: ["Advantage+ campaigns", "Lookalike & interest audiences", "Dynamic product ads"],
+      },
+      {
+        icon: "Users",
+        title: "LinkedIn Ads",
+        body: "Reach decision-makers by job title, company and industry for B2B pipeline.",
+        points: ["Lead Gen Forms", "Account-based targeting", "Thought-leader ads"],
+      },
+      {
+        icon: "Play",
+        title: "YouTube & video ads",
+        body: "Video campaigns that build awareness cheaply and feed your retargeting audiences.",
+        points: ["In-stream & Shorts ads", "Demand Gen campaigns", "Video creative testing"],
+      },
+      {
+        icon: "Repeat",
+        title: "Remarketing",
+        body: "Win back visitors who didn't convert with timely, relevant ads across every network.",
+        points: ["Cart & lead recovery", "Sequential messaging", "Frequency control"],
+      },
+      {
+        icon: "FlaskConical",
+        title: "Creative & A/B testing",
+        body: "A steady pipeline of new ad creatives and landing-page tests to beat fatigue.",
+        points: ["Static, video & UGC ads", "Hook & offer testing", "Landing page experiments"],
+      },
+      {
+        icon: "Activity",
+        title: "Tracking & attribution",
+        body: "Accurate data first: every lead, call and sale tracked back to the campaign.",
+        points: ["GA4 & Tag Manager", "Meta Conversions API", "Offline & call tracking"],
+      },
+      {
+        icon: "ShoppingCart",
+        title: "E-commerce ads",
+        body: "Feed-optimised Shopping and catalogue campaigns tuned for profitable ROAS.",
+        points: ["Product feed optimisation", "Margin-based bidding", "Seasonal scaling"],
+      },
+    ],
+    channels: [
+      { id: "googleads", role: "Capture intent", body: "Search, Shopping & Performance Max" },
+      { id: "meta", role: "Create demand", body: "Facebook & Instagram ads" },
+      { id: "linkedin", role: "B2B pipeline", body: "Lead Gen Forms & ABM" },
+      { id: "youtube", role: "Build awareness", body: "In-stream, Shorts & Demand Gen" },
+      { id: "microsoftads", role: "Extra reach", body: "Bing search network" },
+      { id: "amazonads", role: "Marketplace sales", body: "Sponsored products & brands" },
+    ],
+    funnel: [
+      {
+        stage: "Awareness",
+        label: "Top of funnel",
+        goal: "Reach new people who match your ideal customer.",
+        channels: "YouTube · Meta · Display",
+        kpi: "CPM · reach · video views",
+      },
+      {
+        stage: "Consideration",
+        label: "Middle of funnel",
+        goal: "Turn interest into visits, sign-ups and engaged prospects.",
+        channels: "Meta · LinkedIn · Search",
+        kpi: "CTR · cost per visit · engagement",
+      },
+      {
+        stage: "Conversion",
+        label: "Bottom of funnel",
+        goal: "Close the sale or lead with intent-driven and remarketing ads.",
+        channels: "Search · Shopping · Remarketing",
+        kpi: "CPA · conversion rate · ROAS",
+      },
+    ],
+    loop: [
+      { title: "Launch", body: "Structured campaigns with clean tracking and clear goals." },
+      { title: "Test", body: "New creatives, audiences and offers every week." },
+      { title: "Measure", body: "Read results against CPA and ROAS targets — not clicks." },
+      { title: "Scale", body: "Move budget to winners, cut what doesn't pay." },
+    ],
+    metrics: [
+      { name: "ROAS", full: "Return on ad spend", body: "Revenue generated for every unit spent on ads." },
+      { name: "CPA", full: "Cost per acquisition", body: "What it costs to win one lead or customer." },
+      { name: "CTR", full: "Click-through rate", body: "How compelling your ad is to the people who see it." },
+      { name: "CVR", full: "Conversion rate", body: "The share of visitors who take the action you want." },
+      { name: "CAC", full: "Customer acquisition cost", body: "Total marketing cost to acquire a paying customer." },
+      { name: "LTV", full: "Lifetime value", body: "Revenue a customer brings over the whole relationship." },
+    ],
+    pillars: [
+      { icon: "Activity", title: "Tracking first", body: "We fix measurement before spending a cent, so every decision is based on real data." },
+      { icon: "FlaskConical", title: "Always testing", body: "Weekly creative and audience tests keep performance climbing and ads fresh." },
+      { icon: "Wallet", title: "Budget that works", body: "Spend flows to the campaigns that pay back — and you see exactly where it goes." },
+    ],
+    process: [
+      { title: "Audit & goals", body: "Review accounts, tracking and past results; agree target CPA and ROAS." },
+      { title: "Tracking setup", body: "GA4, Tag Manager, pixels and Conversions API configured and verified." },
+      { title: "Strategy & creative", body: "Channel mix, audiences, offers and the first wave of ad creatives." },
+      { title: "Launch", body: "Campaigns go live with daily monitoring through the learning phase." },
+      { title: "Optimise weekly", body: "Bids, budgets, keywords, audiences and creatives refined every week." },
+      { title: "Report & scale", body: "Monthly results review and a plan to scale what's profitable." },
+    ],
+    comparison: [
+      ["You own all ad accounts & data", true, "Sometimes"],
+      ["Conversion tracking set up properly", true, "Rarely"],
+      ["Weekly optimisation", true, "Monthly"],
+      ["New ad creatives every month", true, false],
+      ["Reports on ROAS & CPA", true, "Clicks & impressions"],
+      ["No lock-in contracts", true, false],
+    ],
+    tools: [
+      { label: "Ad platforms", items: ["googleads", "meta", "linkedin", "youtube", "microsoftads", "amazonads"] },
+      { label: "Tracking", items: ["ga4", "gtm", "googlemarketingplatform", "hotjar"] },
+      { label: "Reporting", items: ["looker", "hubspot", "semrush", "zapier"] },
+    ],
+    faqs: [
+      {
+        q: "What budget do we need for performance marketing?",
+        a: "It depends on your market, goals and average order or lead value. We'll recommend a starting test budget after the audit and scale it only once campaigns hit your target cost per acquisition.",
+      },
+      {
+        q: "How quickly will paid ads deliver results?",
+        a: "Ads start generating traffic and leads from day one, but campaigns need 2–4 weeks of data to exit the learning phase and optimise. Most clients see performance stabilise and improve by the second month.",
+      },
+      {
+        q: "Who owns the ad accounts?",
+        a: "You do — always. Campaigns run in your own Google, Meta and LinkedIn accounts, and you keep full access to every account, audience and piece of data.",
+      },
+      {
+        q: "Google Ads or Meta Ads — which is better?",
+        a: "They do different jobs. Google captures people already searching for what you sell; Meta creates demand by reaching people who don't know you yet. Most growing brands get the best results using both together.",
+      },
+      {
+        q: "How do you report on performance?",
+        a: "You get a live dashboard plus a monthly report covering spend, conversions, cost per acquisition, ROAS and what we're testing next — explained in plain language on a review call.",
+      },
+    ],
+  },
 ];
 
 /** "Web Development Services", but never "SEO Services Services". */

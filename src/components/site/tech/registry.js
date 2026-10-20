@@ -10,7 +10,8 @@ import {
   siLottiefiles, siMiro, siStorybook, siGooglesearchconsole, siGoogleanalytics, siGoogletagmanager, siSemrush,
   siHotjar, siLooker, siGoogleads, siHubspot, siYoast, siLighthouse, siPagespeedinsights, siAlgolia, siMapbox,
   siSentry, siCypress, siMailchimp, siSlack, siZendesk, siGooglemaps, siGoogle, siMeta, siNotion, siJira, siTwilio,
-  siWhatsapp,
+  siWhatsapp, siInstagram, siFacebook, siYoutube, siX, siPinterest, siThreads, siHootsuite, siBuffer, siCanva,
+  siGooglemarketingplatform,
 } from "simple-icons";
 
 /**
@@ -122,6 +123,19 @@ export const tech = {
   jira: { name: "Jira", icon: siJira },
   twilio: { name: "Twilio", icon: siTwilio },
   whatsapp: { name: "WhatsApp", icon: siWhatsapp },
+  instagram: { name: "Instagram", icon: siInstagram },
+  facebook: { name: "Facebook", icon: siFacebook },
+  linkedin: { name: "LinkedIn", icon: null, mono: "in", color: "#0A66C2" },
+  youtube: { name: "YouTube", icon: siYoutube },
+  x: { name: "X", icon: siX },
+  pinterest: { name: "Pinterest", icon: siPinterest },
+  threads: { name: "Threads", icon: siThreads },
+  hootsuite: { name: "Hootsuite", icon: siHootsuite },
+  buffer: { name: "Buffer", icon: siBuffer },
+  canva: { name: "Canva", icon: siCanva },
+  googlemarketingplatform: { name: "Marketing Platform", icon: siGooglemarketingplatform },
+  microsoftads: { name: "Microsoft Ads", icon: null, mono: "MS", color: "#00A4EF" },
+  amazonads: { name: "Amazon Ads", icon: null, mono: "a", color: "#FF9900" },
 };
 
 /** Groups for the homepage "Tools & technologies" section. */

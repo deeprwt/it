@@ -54,7 +54,9 @@ const fetchSettings = unstable_cache(
 export const getSiteSettings = cache(async () => {
   const row = (await safe(fetchSettings, null, "site settings")) || {};
   const pick = (value, fallback) => (value === null || value === undefined || value === "" ? fallback : value);
-  const socials = { ...siteDefaults.socials, ...(row.socials || {}) };
+  // Once settings exist in the database, the dashboard is the source of truth:
+  // a cleared URL removes that icon. Code defaults only apply before setup.
+  const socials = row.id ? { ...(row.socials || {}) } : { ...siteDefaults.socials };
 
   return {
     siteName: pick(row.site_name, siteDefaults.name),

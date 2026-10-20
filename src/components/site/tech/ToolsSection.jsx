@@ -14,15 +14,43 @@ function luminance(hex) {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
+/** Brand-coloured logo (or monogram tile) for a registry id. */
+export function TechLogo({ id, tone = "light", className = "h-9 w-9" }) {
+  const item = tech[id];
+  if (!item) return null;
+  const { icon } = item;
+  if (!icon) {
+    return (
+      <span
+        aria-hidden="true"
+        className={cn(
+          "flex shrink-0 items-center justify-center rounded-lg font-display font-bold transition-transform duration-300 group-hover:scale-110",
+          item.color ? "text-white" : "bg-foreground text-background",
+          (item.mono || "").length > 2 ? "text-[11px]" : "text-sm",
+          className
+        )}
+        style={item.color ? { background: item.color } : undefined}
+      >
+        {item.mono || item.name.replace(/[^A-Za-z0-9]/g, "").slice(0, 3)}
+      </span>
+    );
+  }
+  // Near-black logos vanish on dark backgrounds (and near-white on light) → use text colour.
+  const lum = luminance(icon.hex);
+  const color = tone === "dark" ? (lum < 0.05 ? "currentColor" : `#${icon.hex}`) : lum > 0.8 ? "currentColor" : `#${icon.hex}`;
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className={cn("shrink-0 transition-transform duration-300 group-hover:scale-110", className)} style={{ fill: color }}>
+      <path d={icon.path} />
+    </svg>
+  );
+}
+
+export const techName = (id) => tech[id]?.name || id;
+
 /** One technology tile: brand-coloured logo (or monogram) + name. */
 export function TechTile({ id, tone = "light", className }) {
   const item = tech[id];
   if (!item) return null;
-  const { icon } = item;
-  // Near-black logos vanish on dark backgrounds (and near-white on light) → use text colour.
-  const lum = icon ? luminance(icon.hex) : 0;
-  const color = !icon ? undefined : tone === "dark" ? (lum < 0.05 ? "currentColor" : `#${icon.hex}`) : lum > 0.8 ? "currentColor" : `#${icon.hex}`;
-
   return (
     <div
       className={cn(
@@ -30,15 +58,7 @@ export function TechTile({ id, tone = "light", className }) {
         className
       )}
     >
-      {icon ? (
-        <svg role="img" aria-hidden="true" viewBox="0 0 24 24" className="h-9 w-9 transition-transform duration-300 group-hover:scale-110" style={{ fill: color }}>
-          <path d={icon.path} />
-        </svg>
-      ) : (
-        <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-foreground font-display text-[11px] font-bold text-background">
-          {item.name.replace(/[^A-Za-z0-9]/g, "").slice(0, 3)}
-        </span>
-      )}
+      <TechLogo id={id} tone={tone} />
       <span className="text-xs font-medium text-foreground/80">{item.name}</span>
     </div>
   );

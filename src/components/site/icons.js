@@ -6,6 +6,7 @@ import {
   Headphones, Target, Settings2, Receipt, Lock, Store, Boxes, ShoppingCart, Repeat, Plug, ArrowRightLeft, BadgePercent,
   Expand, FileText, KeyRound, ClipboardCheck, ArrowUpWideNarrow, LineChart, BarChart3, Cpu, Landmark, Building2, Truck,
   Plane,
+  Share2, Crosshair, PenLine, Clapperboard, MessageCircle, Heart, UserPlus, CalendarDays, Play, FlaskConical, Activity, Wallet,
   Linkedin, Github, Twitter, Instagram, Dribbble, Youtube, Facebook,
 } from "lucide-react";
 
@@ -18,6 +19,7 @@ export const icons = {
   Headphones, Target, Settings2, Receipt, Lock, Store, Boxes, ShoppingCart, Repeat, Plug, ArrowRightLeft, BadgePercent,
   Expand, FileText, KeyRound, ClipboardCheck, ArrowUpWideNarrow, LineChart, BarChart3, Cpu, Landmark, Building2, Truck,
   Plane,
+  Share2, Crosshair, PenLine, Clapperboard, MessageCircle, Heart, UserPlus, CalendarDays, Play, FlaskConical, Activity, Wallet,
 };
 
 export const socialIcons = {

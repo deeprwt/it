@@ -17,6 +17,8 @@ export const footerNav = [
       { label: "AI & Automation", href: "/services/ai-automation" },
       { label: "E-commerce Development", href: "/services/ecommerce" },
       { label: "SEO Services", href: "/services/seo-growth" },
+      { label: "Social Media Marketing", href: "/services/social-media-marketing" },
+      { label: "Performance Marketing", href: "/services/performance-marketing" },
     ],
   },
   {

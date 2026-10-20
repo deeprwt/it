@@ -43,16 +43,16 @@ export function ServicesSection() {
           eyebrow="what we ship"
           title={
             <>
-              Six disciplines. <span className="text-muted-foreground">One crew.</span>
+              Eight disciplines. <span className="text-muted-foreground">One crew.</span>
             </>
           }
           description="Pick one or bundle them all — every engagement is run by senior people who design, build and measure in the same sprint."
           align="split"
         />
 
-        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
-            <Reveal key={s.slug} delay={(i % 3) * 90}>
+            <Reveal key={s.slug} delay={(i % 4) * 80}>
               <Spotlight asChild className="group block h-full rounded-2xl border bg-card p-7 shadow-subtle transition-all duration-500 hover:-translate-y-1 hover:border-brand/40">
                 <Link href={`/services/${s.slug}`}>
                   <span className="spotlight-border" aria-hidden />

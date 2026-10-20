@@ -25,6 +25,16 @@ import {
   FunnelSection,
 } from "./sections";
 import { SerpVisual, LighthouseVisual, DesignCanvasVisual, PhonesVisual, AgentChatVisual, StorefrontVisual } from "./visuals";
+import { SocialFeedVisual, AdsDashboardVisual } from "./marketing-visuals";
+import {
+  KpiSection,
+  PlatformsSection,
+  ContentCalendarSection,
+  ChannelsSection,
+  AdsFunnelSection,
+  OptimizationLoopSection,
+  MetricsGlossarySection,
+} from "./marketing-sections";
 
 /* Hero backgrounds — each service gets its own atmosphere. */
 
@@ -211,7 +221,82 @@ function SeoPage({ service, settings }) {
   );
 }
 
+/* ── Social media marketing ────────────────────────────────────── */
+
+function SocialMediaPage({ service, settings }) {
+  return (
+    <>
+      <ServiceHero
+        service={service}
+        visual={<SocialFeedVisual />}
+        primaryCta="Get a free social audit"
+        background={<DotsGlow a="bg-[#ee2a7b]/15" b="bg-brand/15" />}
+      />
+      <SubServicesSection
+        service={service}
+        eyebrow="social media"
+        columns={4}
+        description="Strategy, content, community and paid social — handled end to end by one team that knows your brand."
+      />
+      <ContentCalendarSection calendar={service.calendar} />
+      <PlatformsSection platforms={service.platforms} />
+      <KpiSection
+        kpis={service.kpis}
+        title={
+          <>
+            Followers are nice. <span className="text-gradient">Customers are better.</span>
+          </>
+        }
+        description="We report on four numbers every month — and the last one is the one that pays."
+      />
+      <StepsSection steps={service.process} title="How we grow your social" light description="A clear monthly rhythm: plan, create, engage, report — and improve." />
+      <ComparisonSection rows={service.comparison} title="Snowdox vs. a typical social agency" />
+      <PillarsSection pillars={service.pillars} title="Why brands trust us with their voice" light />
+      <ServiceToolsSection groups={service.tools} title="Platforms & tools we use" light={false} />
+      <IndustriesSection light />
+      <FaqSection faqs={service.faqs} title="Social media marketing FAQs" />
+      <RelatedServices current={service.slug} />
+      <CtaSection email={settings.email} />
+    </>
+  );
+}
+
+/* ── Performance marketing ─────────────────────────────────────── */
+
+function PerformanceMarketingPage({ service, settings }) {
+  return (
+    <>
+      <ServiceHero
+        service={service}
+        visual={<AdsDashboardVisual />}
+        primaryCta="Get a free ad account audit"
+        background={<GridGlow a="bg-brand/20" b="bg-success/10" />}
+      />
+      <SubServicesSection
+        service={service}
+        eyebrow="paid media"
+        columns={4}
+        description="Paid search, paid social and video — planned, tracked and optimised to hit your target cost per customer."
+      />
+      <ChannelsSection channels={service.channels} />
+      <AdsFunnelSection funnel={service.funnel} />
+      <OptimizationLoopSection loop={service.loop} />
+      <MetricsGlossarySection metrics={service.metrics} />
+      <StepsSection steps={service.process} title="How we launch and scale your ads" light description="Tracking first, then campaigns — so every decision is based on real numbers." />
+      <ComparisonSection rows={service.comparison} title="Snowdox vs. a typical ads agency" />
+      <PillarsSection pillars={service.pillars} title="Built to make your ad spend work harder" light />
+      <ServiceToolsSection groups={service.tools} title="Ad platforms & tracking tools" light={false} />
+      <IndustriesSection light />
+      <FaqSection faqs={service.faqs} title="Performance marketing FAQs" />
+      <RelatedServices current={service.slug} />
+      <CtaSection email={settings.email} />
+    </>
+  );
+}
+
 export const servicePages = {
+  "social-media-marketing": SocialMediaPage,
+  "performance-marketing": PerformanceMarketingPage,
   "web-development": WebDevelopmentPage,
   "product-design": ProductDesignPage,
   "mobile-apps": MobileAppsPage,

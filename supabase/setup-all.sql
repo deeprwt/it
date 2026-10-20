@@ -372,7 +372,6 @@ drop policy if exists "media bucket: staff delete" on storage.objects;
 create policy "media bucket: staff delete" on storage.objects
   for delete using (bucket_id = 'media' and public.is_staff());
 
-
 -- ════════════════════════════════════════════════════════════════════
 --  Snowdox CMS — starter content. Run after schema.sql.
 --  Idempotent: re-running never overwrites edits made in the dashboard.
@@ -429,6 +428,14 @@ insert into public.page_seo (path, label, meta_title, meta_description, keywords
    'SEO Agency — Technical SEO & Content Growth | Snowdox',
    'Technical SEO, content strategy, schema markup and CRO that compound month after month — with transparent reporting tied to revenue.',
    array['SEO agency','technical SEO','content marketing','programmatic SEO','conversion optimisation'], 0.8, 'monthly'),
+  ('/services/social-media-marketing', 'Social Media Marketing',
+   'Social Media Marketing Agency — Content, Reels & Community | Snowdox',
+   'Social media strategy, scroll-stopping content, Reels and daily community management that turn followers into customers. Get a free social audit.',
+   array['social media marketing agency','social media management','Instagram marketing','LinkedIn marketing','Reels content creation','influencer marketing'], 0.8, 'monthly'),
+  ('/services/performance-marketing', 'Performance Marketing',
+   'Performance Marketing Agency — Google & Meta Ads for ROAS | Snowdox',
+   'Google Ads, Meta Ads and LinkedIn Ads managed for return on ad spend — with proper conversion tracking, weekly testing and transparent reporting.',
+   array['performance marketing agency','Google Ads agency','Meta Ads agency','PPC management','paid social','ROAS optimisation'], 0.8, 'monthly'),
   ('/work', 'Work',
    'Our Work — Websites, Products & AI Tools | Snowdox',
    'Selected websites, digital products and AI tools designed, engineered and grown by the Snowdox studio.',
@@ -531,15 +538,5 @@ insert into public.posts (
 )
 on conflict (slug) do nothing;
 
--- ── Confirm the dashboard login's email (no confirmation link needed) ──
-update auth.users set email_confirmed_at = coalesce(email_confirmed_at, now())
-where lower(email) = 'cravekart01@gmail.com';
-
+update auth.users set email_confirmed_at = coalesce(email_confirmed_at, now()) where lower(email) = 'cravekart01@gmail.com';
 notify pgrst, 'reload schema';
-
--- Check: should return 7 tables, 1 bucket, 1 admin
-select
-  (select count(*) from information_schema.tables where table_schema='public' and table_name in ('profiles','categories','posts','page_seo','site_settings','media','leads')) as tables,
-  (select count(*) from storage.buckets where id='media') as media_bucket,
-  (select string_agg(email || ' = ' || role, ', ') from public.profiles) as accounts,
-  (select count(*) from public.posts) as posts;
