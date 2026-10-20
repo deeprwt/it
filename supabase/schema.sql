@@ -62,6 +62,17 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created after insert on auth.users
   for each row execute function public.handle_new_user();
 
+-- Backfill: accounts created before this schema ran get a profile, and if
+-- there is still no admin, the oldest account is promoted.
+insert into public.profiles (id, email, full_name, role)
+select u.id, u.email, coalesce(u.raw_user_meta_data ->> 'full_name', split_part(u.email, '@', 1)), 'viewer'
+from auth.users u
+on conflict (id) do nothing;
+
+update public.profiles set role = 'admin'
+where id = (select p.id from public.profiles p join auth.users u on u.id = p.id order by u.created_at limit 1)
+  and not exists (select 1 from public.profiles where role = 'admin');
+
 create or replace function public.is_staff()
 returns boolean
 language sql
